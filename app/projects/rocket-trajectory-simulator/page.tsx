@@ -261,18 +261,6 @@ export default function RocketSimulatorPage() {
                   />
                 </div>
 
-                <p>
-                  Results are presented as confidence ellipses overlaid on a map, showing the 
-                  probability of landing within certain distances from the nominal impact point. 
-                  This information is critical for establishing safe recovery zones and obtaining 
-                  launch permits from aviation authorities.
-                </p>
-
-                <p>
-                  Parallel processing using Python multiprocessing library enables rapid execution 
-                  of large Monte Carlo sets, typically completing 10,000 runs in under five minutes 
-                  on a standard laptop computer.
-                </p>
 
                 <div className="clear-both" />
 
