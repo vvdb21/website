@@ -1,0 +1,279 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+export const projects = [
+  {
+    id: 1,
+    slug: "uav-flying-wing",
+    title: "UAV Flying Wing",
+    shortDesc: "Autonomous RC flying wing design",
+    fullDesc: "Designed and built an autonomous RC flying wing with custom flight controller integration. Features include auto-stabilization, waypoint navigation, and telemetry systems. Built using composite materials for optimal weight-to-strength ratio.",
+    tags: ["Python", "ArduPilot", "CAD", "Composites"],
+    color: "from-blue-500/20 to-cyan-500/20",
+    image: "/images/projects/uav-flying-wing.jpg",
+    startDate: "2025-09",
+    gallery: [
+      "/images/projects/uav-flying-wing.jpg",
+      "/images/projects/uav-flying-wing-gallery-1.jpg",
+      "/images/projects/uav-flying-wing-gallery-2.jpg",
+      "/images/projects/uav-flying-wing-gallery-3.jpg",
+    ],
+  },
+  {
+    id: 2,
+    slug: "aircraft-design-project",
+    title: "Aircraft Design Project",
+    shortDesc: "Full performance optimization",
+    fullDesc: "Comprehensive aircraft design project involving aerodynamic analysis, structural sizing, and performance optimization. Used XFLR5 for stability analysis and developed custom MATLAB scripts for constraint diagrams and mission analysis.",
+    tags: ["MATLAB", "XFLR5", "Aerodynamics"],
+    color: "from-indigo-500/20 to-purple-500/20",
+    image: "/images/projects/aircraft-design.jpg",
+    startDate: "2025-06",
+    gallery: [
+      "/images/projects/aircraft-design.jpg",
+      "/images/projects/aircraft-design-gallery-1.jpg",
+      "/images/projects/aircraft-design-gallery-2.jpg",
+      "/images/projects/aircraft-design-gallery-3.jpg",
+    ],
+  },
+  {
+    id: 3,
+    slug: "rocket-trajectory-simulator",
+    title: "Rocket Trajectory Simulator",
+    shortDesc: "6DOF thrust cutoff physics",
+    fullDesc: "Six degrees-of-freedom rocket trajectory simulator with realistic thrust curves, atmospheric modeling, and Monte Carlo analysis for landing dispersion. Includes visualization of flight path and real-time parameter tracking.",
+    tags: ["Python", "NumPy", "Matplotlib", "Physics"],
+    color: "from-orange-500/20 to-red-500/20",
+    image: "/images/projects/rocket-simulator.jpg",
+    startDate: "2025-03",
+    gallery: [
+      "/images/projects/rocket-simulator.jpg",
+      "/images/projects/rocket-simulator-gallery-1.jpg",
+      "/images/projects/rocket-simulator-gallery-2.jpg",
+      "/images/projects/rocket-simulator-gallery-3.jpg",
+    ],
+  },
+  {
+    id: 4,
+    slug: "isa-atmosphere-calculator",
+    title: "ISA Atmosphere Calculator",
+    shortDesc: "Multi-layer atmosphere model",
+    fullDesc: "International Standard Atmosphere calculator implementing the full ISA model including troposphere, stratosphere, and mesosphere layers. Computes temperature, pressure, and density at any altitude up to 80km.",
+    tags: ["Python", "Atmospheric Science"],
+    color: "from-emerald-500/20 to-teal-500/20",
+    image: "/images/projects/isa-calculator.jpg",
+    startDate: "2024-11",
+    gallery: [
+      "/images/projects/isa-calculator.jpg",
+      "/images/projects/isa-calculator-gallery-1.jpg",
+      "/images/projects/isa-calculator-gallery-2.jpg",
+      "/images/projects/isa-calculator-gallery-3.jpg",
+    ],
+  },
+  {
+    id: 5,
+    slug: "aerodynamic-analysis-tool",
+    title: "Aerodynamic Analysis Tool",
+    shortDesc: "Airfoil calculator",
+    fullDesc: "Interactive tool for analyzing airfoil performance using panel methods and thin airfoil theory. Calculates lift, drag, and moment coefficients across a range of angles of attack with viscous corrections.",
+    tags: ["MATLAB", "Aerodynamics", "GUI"],
+    color: "from-violet-500/20 to-pink-500/20",
+    image: "/images/projects/aerodynamic-tool.jpg",
+    startDate: "2024-08",
+    gallery: [
+      "/images/projects/aerodynamic-tool.jpg",
+      "/images/projects/aerodynamic-tool-gallery-1.jpg",
+      "/images/projects/aerodynamic-tool-gallery-2.jpg",
+      "/images/projects/aerodynamic-tool-gallery-3.jpg",
+    ],
+  },
+  {
+    id: 6,
+    slug: "flight-data-logger",
+    title: "Flight Data Logger",
+    shortDesc: "Real-time telemetry system",
+    fullDesc: "Custom flight data logging system with GPS, IMU, and barometric sensors. Features SD card storage, real-time wireless transmission, and post-flight analysis software for reviewing flight performance.",
+    tags: ["Arduino", "C++", "Python", "Electronics"],
+    color: "from-sky-500/20 to-blue-500/20",
+    image: "/images/projects/flight-data-logger.jpg",
+    startDate: "2024-05",
+    gallery: [
+      "/images/projects/flight-data-logger.jpg",
+      "/images/projects/flight-data-logger-gallery-1.jpg",
+      "/images/projects/flight-data-logger-gallery-2.jpg",
+      "/images/projects/flight-data-logger-gallery-3.jpg",
+    ],
+  },
+  {
+    id: 7,
+    slug: "project-placeholder-7",
+    title: "Project Placeholder 7",
+    shortDesc: "Description coming soon",
+    fullDesc: "Full project description will be added here.",
+    tags: ["TBD"],
+    color: "from-slate-500/20 to-gray-500/20",
+    image: "/images/projects/placeholder.jpg",
+    startDate: "2024-04",
+    gallery: [],
+  },
+  {
+    id: 8,
+    slug: "project-placeholder-8",
+    title: "Project Placeholder 8",
+    shortDesc: "Description coming soon",
+    fullDesc: "Full project description will be added here.",
+    tags: ["TBD"],
+    color: "from-slate-500/20 to-gray-500/20",
+    image: "/images/projects/placeholder.jpg",
+    startDate: "2024-02",
+    gallery: [],
+  },
+  {
+    id: 9,
+    slug: "project-placeholder-9",
+    title: "Project Placeholder 9",
+    shortDesc: "Description coming soon",
+    fullDesc: "Full project description will be added here.",
+    tags: ["TBD"],
+    color: "from-slate-500/20 to-gray-500/20",
+    image: "/images/projects/placeholder.jpg",
+    startDate: "2023-12",
+    gallery: [],
+  },
+  {
+    id: 10,
+    slug: "project-placeholder-10",
+    title: "Project Placeholder 10",
+    shortDesc: "Description coming soon",
+    fullDesc: "Full project description will be added here.",
+    tags: ["TBD"],
+    color: "from-slate-500/20 to-gray-500/20",
+    image: "/images/projects/placeholder.jpg",
+    startDate: "2023-10",
+    gallery: [],
+  },
+  {
+    id: 11,
+    slug: "project-placeholder-11",
+    title: "Project Placeholder 11",
+    shortDesc: "Description coming soon",
+    fullDesc: "Full project description will be added here.",
+    tags: ["TBD"],
+    color: "from-slate-500/20 to-gray-500/20",
+    image: "/images/projects/placeholder.jpg",
+    startDate: "2023-08",
+    gallery: [],
+  },
+  {
+    id: 12,
+    slug: "project-placeholder-12",
+    title: "Project Placeholder 12",
+    shortDesc: "Description coming soon",
+    fullDesc: "Full project description will be added here.",
+    tags: ["TBD"],
+    color: "from-slate-500/20 to-gray-500/20",
+    image: "/images/projects/placeholder.jpg",
+    startDate: "2023-06",
+    gallery: [],
+  },
+]
+
+// Featured projects shown on homepage (first 6)
+export const featuredProjects = projects.slice(0, 6)
+
+export function Projects() {
+  return (
+    <section id="projects" className="py-24 px-4">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            Projects
+          </h2>
+          <p className="text-muted-foreground max-w-xl">
+            A collection of aerospace engineering projects spanning flight simulation, 
+            aircraft design, and autonomous systems.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Link href={`/projects/${project.slug}`}>
+                <motion.div
+                  className="group relative w-full text-left p-6 rounded-2xl bg-card backdrop-blur-xl border border-border hover:border-primary/30 transition-all duration-300 overflow-hidden cursor-pointer"
+                  whileHover={{ scale: 1.03, y: -4 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {/* Gradient background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="aspect-video rounded-lg bg-muted/50 mb-4 overflow-hidden relative">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    
+                    <h3 className="font-display text-lg font-semibold text-card-foreground mb-2 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {project.shortDesc}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-1 text-xs rounded-full bg-muted text-muted-foreground"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* View More Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-12"
+        >
+          <Link href="/projects">
+            <Button variant="outline" size="lg" className="gap-2 bg-transparent">
+              View All Projects
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
