@@ -8,22 +8,20 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const project = {
-  title: "Rocket Trajectory Simulator",
-  tags: ["Python", "NumPy", "Matplotlib", "Physics"],
-  fullDesc: "Six degrees-of-freedom rocket trajectory simulator with realistic thrust curves, atmospheric modeling, and Monte Carlo analysis for landing dispersion. Includes visualization of flight path and real-time parameter tracking.",
+  title: "Internship Scanner",
+  tags: ["Python", "Google Cloud Functions", "Telegram API", "Perplexity API"],
+  fullDesc: "An automated pipeline that continuously scans the web for finance and consulting internship opportunities across Europe, with a focus on lesser-known boutique firms where competition is lower. Built on Google Cloud Functions with a Perplexity AI search integration, the system delivers real-time alerts via Telegram, allowing subscribers to track and manage opportunities directly from their phones. Features include automated opening date reminders, two-way subscriber management, and a custom admin interface for targeted firm scanning — all running at near-zero cost.",
   gallery: [
-    "/images/projects/rocket-simulator.jpg",
-    "/images/projects/rocket-simulator-gallery-1.jpg",
-    "/images/projects/rocket-simulator-gallery-2.jpg",
-    "/images/projects/rocket-simulator-gallery-3.jpg",
+    "/images/Internship bot.jpeg",
   ],
 }
 
 const keyFeatures = [
-  "Six degrees-of-freedom physics simulation",
-  "Realistic thrust curves and atmospheric modeling",
-  "Monte Carlo analysis for landing dispersion prediction",
-  "Real-time flight path visualization",
+  "Perplexity AI integration for dynamic web scraping and opportunity discovery",
+  "Hosted on Google Cloud Functions for scalable, serverless execution with minimal maintenance",
+  "Real-time Telegram alerts for new internship postings, with interactive subscriber management",
+  "Google Sheets database for tracking and managing internship applications and deadlines",
+  "Code on my GitHub",
 ]
 
 export default function RocketSimulatorPage() {
@@ -153,7 +151,7 @@ export default function RocketSimulatorPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Category</h3>
-                  <p className="text-foreground">Aerospace Engineering</p>
+                  <p className="text-foreground">Coding</p>
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Status</h3>
@@ -161,7 +159,7 @@ export default function RocketSimulatorPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Institution</h3>
-                  <p className="text-foreground">TU Delft</p>
+                  <p className="text-foreground">Independent Project</p>
                 </div>
               </div>
             </div>
@@ -187,81 +185,71 @@ export default function RocketSimulatorPage() {
                 </h3>
                 
                 <p>
-                  The Rocket Trajectory Simulator was developed to predict the flight path and landing 
-                  location of sounding rockets and high-power amateur rockets. The simulation incorporates 
-                  a full six degrees-of-freedom dynamics model, accounting for both translational and 
-                  rotational motion throughout the flight.
+                  The Internship Discovery & Management Bot is a fully automated, cloud-native 
+                  pipeline designed to solve the inefficiency of manual job hunting in competitive 
+                  finance and consulting markets. By replacing tedious, repetitive web searches with 
+                  an intelligent monitoring system, the project ensures that users stay ahead of 
+                  application windows—specifically targeting high-value opportunities at boutique 
+                  firms that are often overlooked in mass-market searches. The system functions as 
+                  a continuous intelligence layer, proactively identifying and filtering relevant 
+                  roles from across the European market to deliver high-quality, actionable leads 
+                  directly to the user.
                 </p>
 
                 <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
-                    src="/images/projects/blog-placeholder-1.jpg"
-                    alt="Trajectory visualization"
+                    src="/images/database.jpeg"
+                    alt="Google Sheets Database"
                     fill
                     className="object-cover"
                   />
                 </div>
 
-                <p>
-                  The motivation for this project came from participation in a student rocketry team, 
-                  where accurate trajectory prediction is essential for safety planning and recovery 
-                  operations. Commercial software options were either too expensive or lacked the 
-                  flexibility needed for custom motor configurations.
-                </p>
-
-                <p>
-                  Built entirely in Python using NumPy for numerical computations and Matplotlib for 
-                  visualization, the simulator provides an accessible yet powerful tool for trajectory 
-                  analysis and mission planning.
-                </p>
-
                 <div className="clear-both" />
 
                 <h3 className="font-display text-xl font-semibold text-foreground pt-4">
-                  Physics Engine
+                  System Architecture
                 </h3>
 
                 <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
-                    src="/images/projects/blog-placeholder-2.jpg"
-                    alt="6DOF model diagram"
+                    src="/images/telegram.jpeg"
+                    alt="Telegram API interface"
                     fill
                     className="object-cover"
                   />
                 </div>
 
                 <p>
-                  The core physics engine solves the equations of motion using a fourth-order 
-                  Runge-Kutta integration scheme. The state vector includes position, velocity, 
-                  orientation (quaternions), and angular velocity, giving 13 state variables that 
-                  are propagated at each time step.
+                  The architecture follows a modular, serverless design centered on Google Cloud Functions, which 
+                  execute discrete logic for scanning, notification, and data management. The research engine leverages 
+                  the Perplexity AI API to perform automated web scraping and data extraction, with results processed 
+                  through a deduplication layer to ensure only unique opportunities are recorded. This data is 
+                  synchronized with a Google Sheets backend, which serves as both a database and an administrative 
+                  dashboard for the pipeline. Inter-service communication is facilitated via Telegram 
+                  API, providing a bidirectional interface that allows for immediate status updates and interaction. 
+                  The entire infrastructure is orchestrated by Cloud Scheduler, which triggers periodic, low-cost scans 
+                  while maintaining minimal overhead by remaining idle between operations.
                 </p>
 
-                <p>
-                  Aerodynamic forces are computed using coefficient-based models with dependencies 
-                  on Mach number and angle of attack. The atmospheric model implements the full 
-                  International Standard Atmosphere with extensions for winds aloft based on 
-                  historical weather data.
-                </p>
-
-                <p>
-                  Thrust curves are imported from standard RASP engine files, with interpolation 
-                  providing smooth thrust variation over time. Mass properties are updated 
-                  dynamically as propellant is consumed, including shifts in center of gravity 
-                  that affect stability.
-                </p>
 
                 <div className="clear-both" />
 
                 <h3 className="font-display text-xl font-semibold text-foreground pt-4">
-                  Monte Carlo Analysis
+                  Deduplication
                 </h3>
 
                 <p>
-                  One of the most valuable features is the Monte Carlo capability, which runs 
-                  thousands of simulations with randomized input parameters to generate statistical 
-                  landing dispersion ellipses. Parameters varied include wind speed and direction, 
-                  motor performance, aerodynamic coefficients, and launch rail angle.
+                  A significant technical challenge in the project was designing a robust deduplication 
+                  logic to handle redundant job postings across multiple search iterations. Because the 
+                  system performs automated scans every three days, it frequently encounters the same 
+                  internship listings that have not yet been removed from company career portals. I 
+                  addressed this by implementing a custom hashing algorithm that evaluates a combination 
+                  of unique identifiers—specifically the firm name and role title—against a persistent 
+                  history of previously recorded entries in the Google Sheets database. This ensures 
+                  that the system only alerts the user to fresh, unique opportunities, effectively
+                  filtering out thousands of redundant signals and maintaining the integrity of the 
+                  application pipeline.
                 </p>
 
                 <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
@@ -289,21 +277,36 @@ export default function RocketSimulatorPage() {
                 <div className="clear-both" />
 
                 <h3 className="font-display text-xl font-semibold text-foreground pt-4">
-                  Validation and Results
+                  Future Improvements
                 </h3>
 
                 <p>
-                  The simulator has been validated against flight data from several rocket launches, 
-                  showing excellent agreement in apogee altitude (within 3%) and landing location 
-                  (within the predicted 95% confidence ellipse in all cases).
+                  While the current system provides a robust framework for internship discovery, several potential 
+                  enhancements could further refine its utility and scalability. These are ideas currently under 
+                  consideration for future development:
                 </p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>
+                    <strong>Intelligent Filtering:</strong> Integrating advanced natural language processing to perform "fit" 
+                    analysis on job descriptions, allowing for more granular filtering based on specific organizational 
+                    culture or technical skill requirements.
+                  </li>
+                  <li>
+                    <strong>Dedicated Dashboard:</strong> Transitioning from the current spreadsheet-based interface to a 
+                    custom web dashboard, which would provide interactive application funnel analytics and advanced 
+                    performance visualization.
+                  </li>
+                  <li>
+                    <strong>Expanded Scope:</strong> Scaling the search parameters to track full-time graduate programs 
+                    and entry-level career opportunities, extending the system's value beyond the student internship lifecycle.
+                  </li>
+                  <li>
+                    <strong>Enhanced Reliability:</strong> Implementing a more sophisticated logging and error-handling suite 
+                    to provide proactive monitoring, ensuring immediate recovery from failed API calls or synchronization 
+                    interruptions.
+                  </li>
+                </ul>
 
-                <p>
-                  The tool has been adopted by our student rocketry team for all mission planning 
-                  activities and has contributed to successful launches reaching altitudes exceeding 
-                  3 kilometers. Future development will focus on adding active guidance simulation 
-                  for thrust vector controlled vehicles.
-                </p>
               </div>
             </div>
           </motion.div>

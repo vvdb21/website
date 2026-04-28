@@ -198,8 +198,8 @@ export default function AircraftDesignPage() {
 
                 <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
-                    src="/images/projects/blog-placeholder-1.jpg"
-                    alt="Constraint diagram analysis"
+                    src="/images/horizontal link.png"
+                    alt="Horizontal link"
                     fill
                     className="object-cover"
                   />
