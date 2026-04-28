@@ -84,7 +84,7 @@ export function Navigation() {
             {/* Right side: Social + Theme Toggle */}
             <div className="flex items-center gap-2">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/viktor-van-den-berghe/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
@@ -93,7 +93,7 @@ export function Navigation() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com"
+                href="https://www.github.com/vvdb21"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
@@ -103,7 +103,7 @@ export function Navigation() {
               </a>
               
               <a
-                href="https://soundcloud.com"
+                href="https://www.soundcloud.com/vvdb21"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"

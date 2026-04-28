@@ -10,18 +10,18 @@ export const projects = [
   {
     id: 1,
     slug: "uav-flying-wing",
-    title: "UAV Flying Wing",
-    shortDesc: "Autonomous RC flying wing design",
-    fullDesc: "Designed and built an autonomous RC flying wing with custom flight controller integration. Features include auto-stabilization, waypoint navigation, and telemetry systems. Built using composite materials for optimal weight-to-strength ratio.",
-    tags: ["Python", "ArduPilot", "CAD", "Composites"],
+    title: "Unmanned Aerial System",
+    shortDesc: "Design, build and test of autonomous RC aircraft",
+    fullDesc: "Designed, built and tested a fully 3D printed UAS from scratch. The aircraft is 1.4m wingspan, V-tail pusher configuration with an AUW of ~2.5kg. Constructed 50 custom designed 3D printed parts, the goal was to create an airframe that could be rapidly reproduced and repaired using a simple desktop 3D printer, making it suitable for deployment in resource-limited environments.",
+    tags: ["XFLR5", "Fusion 360", "3D Printing", "ArduPilot"],
     color: "from-blue-500/20 to-cyan-500/20",
-    image: "/images/projects/uav-flying-wing.jpg",
-    startDate: "2025-09",
+    image: "/images/projects/UAV assembled snooker.jpeg",
+    startDate: "2026-01",
     gallery: [
-      "/images/projects/uav-flying-wing.jpg",
-      "/images/projects/uav-flying-wing-gallery-1.jpg",
-      "/images/projects/uav-flying-wing-gallery-2.jpg",
-      "/images/projects/uav-flying-wing-gallery-3.jpg",
+      "images/UAV assembled snooker.jpeg",
+      "images/UAV test living.jpeg",
+      "/images/UAV CAD Iso.jpeg",
+      "/images/UAV CAD top.jpeg",
     ],
   },
   {
@@ -200,8 +200,8 @@ export function Projects() {
             Projects
           </h2>
           <p className="text-muted-foreground max-w-xl">
-            A collection of aerospace engineering projects spanning flight simulation, 
-            aircraft design, and autonomous systems.
+            {/* A collection of aerospace engineering projects spanning flight simulation, 
+            aircraft design, and autonomous systems. */}
           </p>
         </motion.div>
 

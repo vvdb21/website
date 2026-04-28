@@ -21,29 +21,11 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-6"
-          >
-            Aerospace Engineering Student
-          </motion.p>
           
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground tracking-tight mb-6 whitespace-nowrap">
             Viktor Van den Berghe
           </h1>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="flex items-center justify-center gap-3 text-lg sm:text-xl text-muted-foreground mb-8"
-          >
-            <span>Aerospace Engineering</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            <span>TU Delft</span>
-          </motion.div>
+        
           
           <motion.p
             initial={{ opacity: 0 }}
@@ -51,7 +33,7 @@ export function Hero() {
             transition={{ delay: 0.4 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
-            Building rocket simulators, UAV controllers, and flight dynamics tools.
+            Second Year Aerospace Engineering Student at TU Delft
           </motion.p>
         </motion.div>
 
