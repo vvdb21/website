@@ -8,22 +8,22 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const project = {
-  title: "Aircraft Design Project",
-  tags: ["MATLAB", "XFLR5", "Aerodynamics"],
-  fullDesc: "Comprehensive aircraft design project involving aerodynamic analysis, structural sizing, and performance optimization. Used XFLR5 for stability analysis and developed custom MATLAB scripts for constraint diagrams and mission analysis.",
+  title: "Availability Analysis of an Free Space Optical Communication Link in Delft, Netherlands",
+  tags: ["Python", "Research", "Data Analysis"],
+  fullDesc: "Contributed to analyzing optical turbulence data for free‑space optical communication (FSOC) link availability, using rooftop measurements of Rytov variance and other parameters from TU Delft's optical ground station. I authored the Atmospheric Turbulence section and introduction for the literature review, synthesizing complex research into concise summaries, and created Python visualizations including seasonal/daily availability graphs and multi‑year Rytov variance comparisons. The work highlighted real‑world applications in satellite and horizontal optical links, strengthening my skills in data analysis, scientific writing, and group collaboration.",
   gallery: [
-    "/images/projects/aircraft-design.jpg",
-    "/images/projects/aircraft-design-gallery-1.jpg",
-    "/images/projects/aircraft-design-gallery-2.jpg",
-    "/images/projects/aircraft-design-gallery-3.jpg",
-  ],
+      "/images/ae tu delft.jpg",
+      "/images/scint.jpg",
+      "/images/rytov availability.png",
+      "/images/rytov distribution.png",
+    ],
 }
 
 const keyFeatures = [
-  "Comprehensive aerodynamic analysis and structural sizing",
-  "XFLR5 stability analysis for flight characteristics",
-  "Custom MATLAB scripts for constraint diagrams",
-  "Mission analysis and performance optimization",
+  "650+GB of data analysed from TU Delft's optical ground station",
+  "Data from 1km horizontal link and Polaris vertical link",
+  "1000+ lines of Python code for data processing and visualization",
+  "Research paper produced, aiming to publish in a peer-reviewed journal",
 ]
 
 export default function AircraftDesignPage() {
@@ -157,7 +157,7 @@ export default function AircraftDesignPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Status</h3>
-                  <p className="text-foreground">Completed</p>
+                  <p className="text-foreground">In Progress</p>
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Institution</h3>
@@ -187,10 +187,13 @@ export default function AircraftDesignPage() {
                 </h3>
                 
                 <p>
-                  This comprehensive aircraft design project was undertaken as part of the aerospace 
-                  engineering curriculum at TU Delft. The objective was to design a regional turboprop 
-                  aircraft capable of carrying 50 passengers over a range of 1,500 kilometers while 
-                  meeting stringent efficiency and environmental targets.
+                  This study addresses the critical challenge of limited radio frequency (RF) spectrum capacity 
+                  by evaluating free-space optical communication (FSOC) as a high-bandwidth alternative. While 
+                  optical frequencies offer immense potential for high-speed data transfer, their performance is 
+                  significantly hindered by atmospheric turbulence—specifically refractive index fluctuations 
+                  that cause scintillation and beam wander. The project aims to quantify FSOC link availability 
+                  in Delft, the Netherlands, by analyzing turbulence data collected from ground-based sensors on 
+                  the TU Delft Aerospace Engineering faculty building.
                 </p>
 
                 <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
@@ -202,23 +205,12 @@ export default function AircraftDesignPage() {
                   />
                 </div>
 
-                <p>
-                  The design process followed a systematic approach, beginning with market analysis 
-                  and requirements definition, progressing through conceptual design, and culminating 
-                  in detailed preliminary design with validated performance predictions.
-                </p>
-
-                <p>
-                  A key innovation in this project was the development of custom MATLAB tools for 
-                  automated constraint diagram generation and sensitivity analysis. These tools 
-                  significantly accelerated the design iteration process and enabled rapid 
-                  exploration of the design space.
-                </p>
+               
 
                 <div className="clear-both" />
 
                 <h3 className="font-display text-xl font-semibold text-foreground pt-4">
-                  Aerodynamic Analysis
+                  FSOC Performance and Atmospheric Turbulence
                 </h3>
 
                 <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
@@ -231,35 +223,28 @@ export default function AircraftDesignPage() {
                 </div>
 
                 <p>
-                  XFLR5 was employed extensively for wing design optimization and stability analysis. 
-                  The software enabled rapid evaluation of different planform configurations, twist 
-                  distributions, and airfoil selections to maximize aerodynamic efficiency.
+                  RF technology is traditionally preferred due to its long wavelengths, which are less 
+                  susceptible to atmospheric disturbances than the shorter wavelengths used in optical 
+                  systems. In contrast, optical frequencies (0.5–5 µm) are highly sensitive to temperature, 
+                  humidity, and density fluctuations, which generate small-scale eddies that severely 
+                  distort beam propagation. Overcoming these turbulence-induced outages is essential to 
+                  unlocking the 100 THz of bandwidth offered by optical communication for Earth-to-space links.
                 </p>
 
-                <p>
-                  The final wing design features a moderate aspect ratio of 11 with a supercritical 
-                  airfoil section optimized for the cruise Mach number. Winglets were incorporated 
-                  to reduce induced drag, providing an estimated 4% improvement in cruise efficiency.
-                </p>
-
-                <p>
-                  Stability derivatives were calculated using XFLR5 panel method analysis and 
-                  validated against historical data from similar aircraft configurations. The 
-                  results confirmed adequate static margins and acceptable dynamic characteristics 
-                  across the flight envelope.
-                </p>
 
                 <div className="clear-both" />
 
                 <h3 className="font-display text-xl font-semibold text-foreground pt-4">
-                  Performance Optimization
+                  Methodology and Measurement Setup
                 </h3>
 
                 <p>
-                  Mission analysis was conducted using custom MATLAB scripts that model the complete 
-                  flight profile including taxi, takeoff, climb, cruise, descent, and landing phases. 
-                  The code accounts for fuel burn, atmospheric variations, and aircraft weight changes 
-                  throughout the mission.
+                  To establish reliable, region-specific FSOC availability data, the study utilizes two complementary 
+                  measurement methods. A horizontal link spanning 1 km to Delftechpark employs a scintillometer to 
+                  derive the atmospheric structure constant (Cₙ²) and the Rytov variance (σ<sub>R</sub><sup>2</sup>), 
+                  providing a direct measure of scintillation strength. Concurrently, vertical link data is obtained 
+                  using infrared cameras to observe Polaris, allowing for the calculation of the Fried parameter (r₀)—a 
+                  critical indicator of atmospheric coherence and link stability.
                 </p>
 
                 <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
@@ -271,37 +256,22 @@ export default function AircraftDesignPage() {
                   />
                 </div>
 
-                <p>
-                  Trade studies were performed to optimize the balance between structural weight, 
-                  fuel efficiency, and passenger capacity. Sensitivity analysis revealed that wing 
-                  loading and engine sizing were the most critical parameters affecting overall 
-                  aircraft economics.
-                </p>
-
-                <p>
-                  The final configuration achieves a block fuel consumption of 1.8 liters per 
-                  100 passenger-kilometers, representing a 15% improvement over comparable 
-                  aircraft currently in service.
-                </p>
-
                 <div className="clear-both" />
 
                 <h3 className="font-display text-xl font-semibold text-foreground pt-4">
-                  Lessons Learned
+                  Data Analysis and Link Availability
                 </h3>
 
                 <p>
-                  This project reinforced the importance of systematic design methodology and the 
-                  value of computational tools in modern aircraft design. The iterative nature of 
-                  the process highlighted how early design decisions propagate through all subsequent 
-                  phases, emphasizing the need for careful consideration during conceptual design.
+                  The research evaluates the probability and cumulative density functions of 
+                  both horizontal and vertical turbulence measurements to establish month-by-month 
+                  and time-of-day performance rankings. By correlating these metrics, the study 
+                  identifies the optimal operational windows for reliable FSOC transmission in 
+                  mid-latitude European environments. Additionally, it investigates the feasibility 
+                  of deriving supplementary optical parameters from existing rooftop instrumentation 
+                  to further improve the understanding of satellite and horizontal link availability.
                 </p>
 
-                <p>
-                  Collaboration with team members from different specializations provided insight 
-                  into the multidisciplinary nature of aircraft design and the importance of 
-                  effective communication across engineering domains.
-                </p>
               </div>
             </div>
           </motion.div>
