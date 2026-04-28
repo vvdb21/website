@@ -8,22 +8,22 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const project = {
-  title: "UAV Flying Wing",
-  tags: ["Python", "ArduPilot", "CAD", "Composites"],
-  fullDesc: "Designed and built an autonomous RC flying wing with custom flight controller integration. Features include auto-stabilization, waypoint navigation, and telemetry systems. Built using composite materials for optimal weight-to-strength ratio.",
+  title: "Unmanned Aerial System",
+  tags: ["XFLR5", "Fusion 360", "3D Printing", "ArduPilot"],
+  fullDesc: "Designed, built and tested a fully 3D printed UAS from scratch. The aircraft is 1.4m wingspan, V-tail pusher configuration with an AUW of ~2.5kg. Constructed 50 custom designed 3D printed parts, the goal was to create an airframe that could be rapidly reproduced and repaired using a simple desktop 3D printer, making it suitable for deployment in resource-limited environments.",
   gallery: [
-    "/images/projects/uav-flying-wing.jpg",
-    "/images/projects/uav-flying-wing-gallery-1.jpg",
-    "/images/projects/uav-flying-wing-gallery-2.jpg",
-    "/images/projects/uav-flying-wing-gallery-3.jpg",
-  ],
+      "/images/UAV assembled snooker.jpeg",
+      "/images/UAV test living.jpeg",
+      "/images/UAV CAD Iso.jpeg",
+      "/images/UAV CAD top.jpeg",
+    ],
 }
 
 const keyFeatures = [
-  "Custom flight controller integration with ArduPilot firmware",
-  "Auto-stabilization and waypoint navigation capabilities",
-  "Composite materials construction for optimal weight-to-strength ratio",
-  "Real-time telemetry systems for flight monitoring",
+  "Material: pre-foamed LW-PLA + carbon fiber wing and tail spars",
+  "5000mAh 4S LiPo battery for ~45 minutes flight time",
+  "SpeedyBee F405 Wing flight controller with ArduPilot firmware",
+  "On board FPV camera with 5.8GHz video transmitter for real-time telemetry and video feed",
 ]
 
 export default function UAVFlyingWingPage() {
@@ -157,11 +157,11 @@ export default function UAVFlyingWingPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Status</h3>
-                  <p className="text-foreground">Completed</p>
+                  <p className="text-foreground">Redesign in Progress</p>
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Institution</h3>
-                  <p className="text-foreground">TU Delft</p>
+                  <p className="text-foreground">Independent Project</p>
                 </div>
               </div>
             </div>
@@ -187,15 +187,15 @@ export default function UAVFlyingWingPage() {
                 </h3>
                 
                 <p>
-                  The UAV Flying Wing project began as an ambitious effort to design and build a fully 
-                  autonomous unmanned aerial vehicle from scratch. The flying wing configuration was 
-                  chosen for its aerodynamic efficiency and inherent stability characteristics, making 
-                  it ideal for long-endurance surveillance and mapping missions.
+                  The UAV project began as a solo effort to design, build, and flight‑test a fully 3D‑printed 
+                  unmanned aerial system from the ground up. The V‑tail pusher configuration was selected to 
+                  balance aerodynamic efficiency, structural simplicity, and ease of manufacturing, while 
+                  supporting manual and semi‑autonomous operation.  
                 </p>
 
                 <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
-                    src="/images/projects/blog-placeholder-1.jpg"
+                    src="/images/living table.jpeg"
                     alt="UAV assembly process"
                     fill
                     className="object-cover"
@@ -203,16 +203,17 @@ export default function UAVFlyingWingPage() {
                 </div>
 
                 <p>
-                  The airframe was constructed using carbon fiber composite materials, which provided 
-                  an exceptional strength-to-weight ratio. The manufacturing process involved vacuum 
-                  bagging and curing techniques to ensure consistent laminate quality throughout the 
-                  structure.
+                  The airframe was constructed entirely from 50 custom 3D‑printed parts, optimized for additive 
+                  manufacturing constraints and rapid assembly. Each component was designed to snap or bolt 
+                  together, enabling quick repairs and straightforward replacement of damaged sections in the 
+                  field.  
                 </p>
 
                 <p>
-                  Integration of the ArduPilot flight controller was a critical phase of the project. 
-                  The open-source firmware allowed for extensive customization of flight parameters 
-                  and autonomous behaviors, including automated takeoff and landing sequences.
+                  Integration of the flight controller, receiver, and telemetry electronics formed a core phase 
+                  of the project. The system was laid out to minimize wiring length, reduce interference, and 
+                  keep the center of gravity within the required envelope, while allowing for future upgrades 
+                  and sensor additions.
                 </p>
 
                 <div className="clear-both" />
@@ -231,22 +232,21 @@ export default function UAVFlyingWingPage() {
                 </div>
 
                 <p>
-                  The flight control system utilizes a Pixhawk-based autopilot running ArduPilot 
-                  firmware. Sensor fusion algorithms combine data from the IMU, GPS, barometer, and 
-                  airspeed sensor to maintain stable flight in various weather conditions.
+                  The flight control system utilizes a SpeedyBee F405 Wing APP board running ArduPilot 
+                  firmware. Sensor fusion algorithms combine data from the IMU, GPS and barometer to maintain 
+                  stable flight in various weather conditions.
                 </p>
 
                 <p>
-                  Custom Python scripts were developed for mission planning and real-time telemetry 
-                  analysis. The ground station software displays live video feed, aircraft attitude, 
-                  and GPS position on an interactive map interface.
+                  Ground station displays real-time telemetry data, including altitude, airspeed, battery voltage, 
+                  GPS coordinates and more on a laptop screen. The same data is also overlayed on the pilot's FPV 
+                  video feed, providing critical situational awareness during flight operations.
                 </p>
 
                 <p>
-                  Power management was carefully optimized to extend flight endurance. A 6S LiPo 
-                  battery pack provides approximately 45 minutes of flight time under typical 
-                  conditions, with the power distribution board monitoring cell voltages and 
-                  triggering return-to-home if levels become critical.
+                  The onboard GPS allows fully autonomous waypoint navigation, enabling the aircraft to execute pre‑planned 
+                  missions without manual input. It also allows for return‑to‑home functionality in case of signal loss or 
+                  low battery, enhancing safety and reliability.
                 </p>
 
                 <div className="clear-both" />
@@ -256,9 +256,11 @@ export default function UAVFlyingWingPage() {
                 </h3>
 
                 <p>
-                  Initial flight tests were conducted at a designated RC flying field under controlled 
-                  conditions. The aircraft demonstrated excellent stability in both manual and 
-                  autonomous flight modes, with smooth transitions between waypoints.
+                  The intial flight test resulted in the loss of the aircraft, most likely due to a combination of pilot error
+                  and suboptimal center of gravity placement. The aircraft was recovered and underwent a redesign to address these 
+                  issues, namely by reducing wall thickness of printed parts to increase the contribution of the battery to the 
+                  overall center of gravity. Second flight test is planned for May 2026.
+                  
                 </p>
 
                 <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
@@ -271,17 +273,11 @@ export default function UAVFlyingWingPage() {
                 </div>
 
                 <p>
-                  Telemetry data analysis revealed that the aircraft consistently achieved its target 
-                  cruise speed of 18 m/s while maintaining altitude within 2 meters of the commanded 
-                  value. Wind gust rejection was particularly impressive, with the autopilot making 
-                  rapid corrections to maintain heading and altitude.
+                  Improvements will be made to the flight test setup to allow for better data collection and analysis. This includes the 
+                  addition of an SD card on the flight controller to log detailed flight data for post‑flight analysis, as well as the 
+                  addition of several cameras to capture different angles of the flight for visual inspection and performance evaluation.
                 </p>
 
-                <p>
-                  The project culminated in a successful 30-minute autonomous mission covering a 
-                  pre-planned survey route. All objectives were met, demonstrating the viability of 
-                  the platform for aerial photography and mapping applications.
-                </p>
 
                 <div className="clear-both" />
 
@@ -290,18 +286,10 @@ export default function UAVFlyingWingPage() {
                 </h3>
 
                 <p>
-                  This project provided invaluable hands-on experience in aircraft design, composite 
-                  manufacturing, and autonomous systems integration. Key takeaways include the 
-                  importance of thorough ground testing before flight, the value of modular design 
-                  for ease of maintenance, and the critical role of proper center of gravity 
-                  positioning in flying wing configurations.
+                  The project is still a work in progress.
                 </p>
 
-                <p>
-                  Future iterations will focus on extending range through more efficient propulsion 
-                  systems and implementing advanced payload capabilities such as multispectral 
-                  imaging sensors for agricultural applications.
-                </p>
+                
               </div>
             </div>
           </motion.div>
