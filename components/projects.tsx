@@ -55,7 +55,7 @@ export const projects = [
       "/images/Internship bot.jpeg",
     ],
   },
-  {/*}
+  
   {
     id: 4,
     slug: "isa-atmosphere-calculator",
@@ -90,6 +90,7 @@ export const projects = [
       "/images/projects/aerodynamic-tool-gallery-3.jpg",
     ],
   },
+  
   {
     id: 6,
     slug: "flight-data-logger",
@@ -180,9 +181,8 @@ export const projects = [
     gallery: [],
   },
 ]
-*/}
 
-// Featured projects shown on homepage (first 6)
+// Featured projects shown on homepage (first 3)
 export const featuredProjects = projects.slice(0, 3)
 
 export function Projects() {
