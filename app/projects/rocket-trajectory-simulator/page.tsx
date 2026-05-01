@@ -196,7 +196,7 @@ export default function RocketSimulatorPage() {
                   directly to the user.
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 w-full sm:w-96 md:w-[40rem] lg:w-[48rem] relative aspect-[16/5] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 w-full sm:w-96 md:w-[40rem] lg:w-[48rem] relative aspect-[14/5] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
                     src="/images/database.jpeg"
                     alt="Google Sheets Database"
@@ -247,7 +247,7 @@ export default function RocketSimulatorPage() {
                 </p>
 
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-80 md:w-96 lg:w-[32rem] relative aspect-[16/8] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-80 md:w-96 lg:w-[32rem] relative aspect-[16/6] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
                     src="/images/internship prompt.png"
                     alt="Internship Prompt"
