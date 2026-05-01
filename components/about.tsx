@@ -22,9 +22,9 @@ export function About() {
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
             About
           </h2>
-          <p className="text-muted-foreground max-w-xl">
+          {/* <p className="text-muted-foreground max-w-xl">
             Passionate about aerospace engineering and building things that fly.
-          </p>
+          </p>*/}
         </motion.div>
 
         {/* Education & Experience Row */}
@@ -53,17 +53,13 @@ export function About() {
                       Delft University of Technology
                     </h4>
                     <p className="text-primary font-medium mb-2">
-                      BSc Aerospace Engineering <span className="text-muted-foreground font-normal">| Netherlands</span>
+                      BSc Aerospace Engineering <span className="text-muted-foreground font-normal">| Netherlands | 2024 - 2028</span>
                     </p>
-                    <p className="text-sm text-muted-foreground">
-                      GPA: 7.0/10.0
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      ACT: 33/36 (98th percentile, 100% in Science)
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      See projects section
-                    </p>
+                    <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
+                      <li>GPA: 7.0/10.0</li>
+                      <li>ACT: 33/36 (98th percentile, 100% in Science)</li>
+                      <li>See projects section</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -78,15 +74,15 @@ export function About() {
                       Harrow School
                     </h4>
                     <p className="text-primary font-medium mb-2">
-                      A-Levels and (I)GCSEs <span className="text-muted-foreground font-normal">| London</span>
+                      A-Levels and (I)GCSEs <span className="text-muted-foreground font-normal">| London | 2019 - 2024</span>
                     </p>
                     <p className="text-muted-foreground text-sm mb-2">
                       A-Level Maths (A*), Physics (A), Design & Technology (A), Economics (A) | IGCSEs: 9 A*s, 1 A
                     </p>
-                    <p className="text-sm text-muted-foreground">
-                      School Ski Team (invited to England training camp), Royal Marines CCF, accepted to UChicago 
-                      'Emerging World Leaders' program and Imperial College London STEM program, among others
-                    </p>
+                    <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
+                      <li>School Ski Team (invited to England training camp), Royal Marines CCF, accepted to UChicago 
+                      'Emerging World Leaders' program and Imperial College London STEM program, among others</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -117,7 +113,7 @@ export function About() {
                       180 Degrees Consulting
                     </h4>
                     <p className="text-primary font-medium mb-2">
-                      Consultant <span className="text-muted-foreground font-normal">| Rotterdam</span>
+                      Consultant <span className="text-muted-foreground font-normal">| Rotterdam | Feb 2026 - present</span>
                     </p>
                     <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
                       <li>Consulted for a leading European colocation data centre operator, visited Brussels site and Amsterdam office to interview C-suite and deliver final presentation</li>
@@ -140,15 +136,12 @@ export function About() {
                       Global Equity Management
                     </h4>
                     <p className="text-primary font-medium mb-2">
-                      Analyst <span className="text-muted-foreground font-normal">| Delft</span>
+                      Analyst <span className="text-muted-foreground font-normal">| Delft | Feb 2026 - present</span>
                     </p>
-                    <p className="text-sm text-muted-foreground">
-                      Accepted to program as part of Founders Initiative to start TU Delft chapter
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Crafted DCF model to value RTX Corp. and produced comprehensive report on investment thesis, 
-                      presented to leadership with recommendation weak buy
-                    </p>
+                    <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
+                      <li>Accepted to program as part of Founders Initiative to start TU Delft chapter</li>
+                      <li>Crafted DCF model to value RTX Corp. and produced comprehensive report on investment thesis, presented to leadership with recommendation weak buy</li>
+                    </ul>
                   </div>
                 </div>
               </div>

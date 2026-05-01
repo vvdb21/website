@@ -211,12 +211,12 @@ export default function RocketSimulatorPage() {
                   System Architecture
                 </h3>
 
-                <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[19.5/9] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-left sm:mr-6 sm:mb-4 w-56 sm:w-64 md:w-72 relative aspect-[9/19.5] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
                     src="/images/telegram.jpeg"
                     alt="Telegram bot user interface"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
 
