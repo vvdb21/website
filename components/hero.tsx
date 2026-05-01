@@ -6,24 +6,22 @@ export function Hero() {
   return ( 
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden text-background"
     >
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/F15.jpg')" }}
       />
-      {/* Overlay for better text readability */}
-      
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center text-inherit">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          
-          <motion.div className="-translate-y-[3cm]">
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-background tracking-tight mb-6 whitespace-nowrap">
+          <motion.div className="-translate-y-[3cm] text-inherit">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-inherit tracking-tight mb-6 whitespace-nowrap">
               Viktor Van den Berghe
             </h1>
 
@@ -31,7 +29,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-lg sm:text-xl text-muted-background max-w-2xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl text-inherit max-w-2xl mx-auto leading-relaxed"
             >
               Second Year Aerospace Engineering Student at TU Delft
             </motion.p>
@@ -42,13 +40,13 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="mt-12 translate-y-[4cm]"
+          className="mt-12 translate-y-[4cm] text-inherit"
         >
           <motion.button
             onClick={() => {
               document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })
             }}
-            className="group inline-flex items-center gap-2 text-sm text-muted-background hover:text-background transition-colors"
+            className="group inline-flex items-center gap-2 text-sm text-inherit hover:text-inherit transition-colors"
             whileHover={{ y: 2 }}
           >
             <span>View Projects</span>
