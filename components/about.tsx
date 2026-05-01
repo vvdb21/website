@@ -134,9 +134,9 @@ export function About() {
                   </div>
                 </div>
               </div>
-            </div>
+            
 
-            <div className="space-y-6">
+            
               <div className="p-6 rounded-2xl bg-card backdrop-blur-xl border border-border">
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-xl bg-primary/10 shrink-0">
