@@ -250,7 +250,7 @@ export function About() {
                     </p>
                     <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
                       <li>Comprehensive training in financial modeling, valuation techniques, and investment banking fundamentals</li>
-                      <li>Joined the AI for Investment Banking webinar series to explore applications of AI to apply to my own modelling work</li>
+                      <li>Joined the AI for Investment Banking webinar series to explore how to apply AI to my own modelling work</li>
                     </ul>
                   </div>
                 </div>
