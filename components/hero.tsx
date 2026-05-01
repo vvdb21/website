@@ -14,9 +14,9 @@ export function Hero() {
         style={{ backgroundImage: "url('/images/F15.jpg')" }}
       />
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/70 dark:bg-background/80" />
+      
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
