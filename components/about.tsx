@@ -116,21 +116,11 @@ export function About() {
                     <h4 className="font-semibold text-card-foreground mb-1">
                       180 Degrees Consulting
                     </h4>
-                    <p className="text-primary font-medium mb-2">
-                      Consultant <span className="text-muted-foreground font-normal">| Rotterdam</span>
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Consulted for a leading European colocation data centre operator, visited Brussels site 
-                      and Amsterdam office to interview C-suite and deliver final presentation
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Developed models for capacity forecasting, revenue optimisation and produced ROI scenarios
-                      and use-case prioritisation rankings
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Feedback from client on models: 'methodologically rigorous… immediately actionable, exactly 
-                      what we needed'
-                    </p>
+                    <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
+                      <li>Consulted for a leading European colocation data centre operator, visited Brussels site and Amsterdam office to interview C-suite and deliver final presentation</li>
+                      <li>Developed models for capacity forecasting, revenue optimisation and produced ROI scenarios and use-case prioritisation rankings</li>
+                      <li>Feedback from client on models: 'methodologically rigorous… immediately actionable, exactly what we needed'</li>
+                    </ul>
                   </div>
                 </div>
               </div>
