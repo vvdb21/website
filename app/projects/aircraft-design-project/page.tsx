@@ -22,7 +22,7 @@ const project = {
 const keyFeatures = [
   "650+GB of data analysed from TU Delft's optical ground station",
   "Data from 1km horizontal link and Polaris vertical link",
-  "1000+ lines of Python code for data processing and visualization",
+  "1500+ lines of Python code for data processing and visualization",
   "Research paper produced, aiming to publish in a peer-reviewed journal",
 ]
 
@@ -191,12 +191,10 @@ export default function AircraftDesignPage() {
                   by evaluating free-space optical communication (FSOC) as a high-bandwidth alternative. While 
                   optical frequencies offer immense potential for high-speed data transfer, their performance is 
                   significantly hindered by atmospheric turbulence—specifically refractive index fluctuations 
-                  that cause scintillation and beam wander. The project aims to quantify FSOC link availability 
-                  in Delft, the Netherlands, by analyzing turbulence data collected from ground-based sensors on 
-                  the TU Delft Aerospace Engineering faculty building.
+                  that cause scintillation and beam wander. 
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-80 md:w-96 lg:w-[28rem] relative aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
                     src="/images/horizontal link.png"
                     alt="Horizontal link"
@@ -204,6 +202,12 @@ export default function AircraftDesignPage() {
                     className="object-cover"
                   />
                 </div>
+
+                <p>
+                  The project aims to quantify FSOC link availability 
+                  in Delft, the Netherlands, by analyzing turbulence data collected from ground-based sensors on 
+                  the TU Delft Aerospace Engineering faculty building.
+                </p>
 
                
 
@@ -213,10 +217,10 @@ export default function AircraftDesignPage() {
                   FSOC Performance and Atmospheric Turbulence
                 </h3>
 
-                <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-96 md:w-80 lg:w-[28rem] relative aspect-[3/4] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
-                    src="/images/projects/blog-placeholder-2.jpg"
-                    alt="XFLR5 analysis results"
+                    src="/images/FSOC gpt.png"
+                    alt="FSOC Diagram"
                     fill
                     className="object-cover"
                   />
@@ -241,20 +245,25 @@ export default function AircraftDesignPage() {
                 <p>
                   To establish reliable, region-specific FSOC availability data, the study utilizes two complementary 
                   measurement methods. A horizontal link spanning 1 km to Delftechpark employs a scintillometer to 
-                  derive the atmospheric structure constant (Cₙ²) and the Rytov variance (σ<sub>R</sub><sup>2</sup>), 
+                  derive the atmospheric structure constant (C<sub>n</sub><sup>2</sup>) and the Rytov variance (σ<sub>R</sub><sup>2</sup>), 
                   providing a direct measure of scintillation strength. Concurrently, vertical link data is obtained 
-                  using infrared cameras to observe Polaris, allowing for the calculation of the Fried parameter (r₀)—a 
-                  critical indicator of atmospheric coherence and link stability.
+                  using infrared cameras to observe Polaris, allowing for the calculation of the Fried parameter (r<sub>0</sub>)—a 
+                  critical indicator of atmospheric coherence and link stability. 
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-80 md:w-96 lg:w-[28rem] relative aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
-                    src="/images/projects/blog-placeholder-3.jpg"
-                    alt="Performance charts"
+                    src="/images/Sky-Monitor-close-up.png"
+                    alt="Miratlas Skymonitor used for vertical measurements"
                     fill
                     className="object-cover"
                   />
                 </div>
+
+                <p>
+                  The horizontal scintillometer data was collected over the period November 2022 to November 2025 with a measurement every 10 minutes. 
+                  The vertical link data was collected over the year 2025 with measurements every minute. This gives a total of 16,687,432 data points to work with and analyse.
+                </p>
 
                 <div className="clear-both" />
 

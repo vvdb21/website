@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 const project = {
   title: "Unmanned Aerial System",
   tags: ["XFLR5", "Fusion 360", "3D Printing", "ArduPilot"],
-  fullDesc: "Designed, built and tested a fully 3D printed UAS from scratch. The aircraft is 1.4m wingspan, V-tail pusher configuration with an AUW of ~2.5kg. Constructed 50 custom designed 3D printed parts, the goal was to create an airframe that could be rapidly reproduced and repaired using a simple desktop 3D printer, making it suitable for deployment in resource-limited environments.",
+  fullDesc: "Designed, built and tested a fully 3D printed UAS from scratch. The aircraft is 1.4m wingspan, V-tail pusher configuration with an AUW of ~2.5kg. Constructed with 50 custom designed 3D printed parts, the goal was to create an airframe that could be rapidly reproduced and repaired using a simple desktop 3D printer, making it suitable for deployment in resource-limited environments.",
   gallery: [
       "/images/UAV assembled snooker.jpeg",
       "/images/UAV test living.jpeg",
@@ -224,8 +224,8 @@ export default function UAVFlyingWingPage() {
 
                 <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
-                    src="/images/projects/blog-placeholder-2.jpg"
-                    alt="Flight controller setup"
+                    src="/images/uav tail.jpeg"
+                    alt="V-tail design"
                     fill
                     className="object-cover"
                   />
@@ -265,8 +265,8 @@ export default function UAVFlyingWingPage() {
 
                 <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
-                    src="/images/projects/blog-placeholder-3.jpg"
-                    alt="Flight test data"
+                    src="/images/uav disassembled.jpeg"
+                    alt="Assembling the UAV"
                     fill
                     className="object-cover"
                   />
