@@ -22,19 +22,20 @@ export function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground tracking-tight mb-6 whitespace-nowrap">
-            Viktor Van den Berghe
-          </h1>
-        
-          
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
-          >
-            Second Year Aerospace Engineering Student at TU Delft
-          </motion.p>
+          <motion.div className="-translate-y-[3cm]">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground tracking-tight mb-6 whitespace-nowrap">
+              Viktor Van den Berghe
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            >
+              Second Year Aerospace Engineering Student at TU Delft
+            </motion.p>
+          </motion.div>
         </motion.div>
 
         <motion.div
