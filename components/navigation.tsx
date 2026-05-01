@@ -45,6 +45,10 @@ export function Navigation() {
     setMobileMenuOpen(false)
   }
 
+  const mutedClass = isScrolled
+    ? "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+    : "text-background/70 hover:text-background hover:bg-background/10"
+
   return (
     <>
       <motion.nav
@@ -58,10 +62,13 @@ export function Navigation() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
+
             {/* Logo */}
             <motion.button
               onClick={() => scrollToSection("#home")}
-              className="font-display text-lg font-semibold text-background tracking-tight"
+              className={`font-display text-lg font-semibold tracking-tight transition-colors ${
+                isScrolled ? "text-foreground" : "text-background"
+              }`}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -74,20 +81,20 @@ export function Navigation() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="px-3 py-2 text-sm font-medium text-background/70 hover:text-background transition-colors rounded-lg hover:bg-background/10"
+                  className={`px-3 py-2 text-sm font-medium transition-colors rounded-lg ${mutedClass}`}
                 >
                   {item.name}
                 </button>
               ))}
             </div>
 
-            {/* Right side: Social + Theme Toggle */}
+            {/* Right side: Social + Mobile Toggle */}
             <div className="flex items-center gap-2">
               <a
                 href="https://www.linkedin.com/in/viktor-van-den-berghe/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-background/70 hover:text-background transition-colors rounded-lg hover:bg-background/10"
+                className={`p-2 transition-colors rounded-lg ${mutedClass}`}
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -96,7 +103,7 @@ export function Navigation() {
                 href="https://www.github.com/vvdb21"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-background/70 hover:text-background transition-colors rounded-lg hover:bg-background/10"
+                className={`p-2 transition-colors rounded-lg ${mutedClass}`}
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -105,17 +112,20 @@ export function Navigation() {
                 href="https://www.soundcloud.com/vvdb21"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-background/70 hover:text-background transition-colors rounded-lg hover:bg-background/10"
+                className={`p-2 transition-colors rounded-lg ${mutedClass}`}
                 aria-label="SoundCloud"
               >
                 <SoundCloudIcon className="w-5 h-5" />
               </a>
 
-              {/* Mobile menu button */}
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden text-background hover:text-background hover:bg-background/10"
+                className={`md:hidden transition-colors ${
+                  isScrolled
+                    ? "text-foreground hover:text-foreground hover:bg-muted/50"
+                    : "text-background hover:text-background hover:bg-background/10"
+                }`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
               >
@@ -126,7 +136,6 @@ export function Navigation() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -140,7 +149,7 @@ export function Navigation() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-3 text-base font-medium text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                  className="block w-full text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
                 >
                   {item.name}
                 </button>
