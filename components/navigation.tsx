@@ -61,7 +61,7 @@ export function Navigation() {
             {/* Logo */}
             <motion.button
               onClick={() => scrollToSection("#home")}
-              className="font-display text-lg font-semibold text-foreground tracking-tight"
+              className="font-display text-lg font-semibold text-background tracking-tight"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -74,7 +74,7 @@ export function Navigation() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+                  className="px-3 py-2 text-sm font-medium text-muted-background hover:text-background transition-colors rounded-lg hover:bg-muted/50"
                 >
                   {item.name}
                 </button>
@@ -87,7 +87,7 @@ export function Navigation() {
                 href="https://www.linkedin.com/in/viktor-van-den-berghe/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+                className="p-2 text-muted-background hover:text-background transition-colors rounded-lg hover:bg-muted/50"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -96,7 +96,7 @@ export function Navigation() {
                 href="https://www.github.com/vvdb21"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+                className="p-2 text-muted-background hover:text-background transition-colors rounded-lg hover:bg-muted/50"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -106,7 +106,7 @@ export function Navigation() {
                 href="https://www.soundcloud.com/vvdb21"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+                className="p-2 text-muted-background hover:text-background transition-colors rounded-lg hover:bg-muted/50"
                 aria-label="SoundCloud"
               >
                 <SoundCloudIcon className="w-5 h-5" />
@@ -141,7 +141,7 @@ export function Navigation() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                  className="block w-full text-left px-4 py-3 text-base font-medium text-muted-background hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
                 >
                   {item.name}
                 </button>
