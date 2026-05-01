@@ -132,6 +132,16 @@ export function About() {
                       what we needed'
                     </p>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="p-6 rounded-2xl bg-card backdrop-blur-xl border border-border">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-xl bg-primary/10 shrink-0">
+                    <Briefcase className="w-6 h-6 text-primary" />
+                  </div>
                   <div>
                     <h4 className="font-semibold text-card-foreground mb-1">
                       Global Equity Management
@@ -152,6 +162,10 @@ export function About() {
             </div>
           </motion.div>
         </div>
+
+
+
+                  
 
         {/* Skills & Courses Row */}
         <div className="grid lg:grid-cols-2 gap-12">
