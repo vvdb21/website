@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 export const projects = [
   {
     id: 1,
-    slug: "uav-flying-wing",
+    slug: "uas-design-project",
     title: "Unmanned Aerial System",
     shortDesc: "Design, build and test of autonomous RC aircraft",
     fullDesc: "Designed, built and tested a fully 3D printed UAS from scratch. The aircraft is 1.4m wingspan, V-tail pusher configuration with an AUW of ~2.5kg. Constructed 50 custom designed 3D printed parts, the goal was to create an airframe that could be rapidly reproduced and repaired using a simple desktop 3D printer, making it suitable for deployment in resource-limited environments.",
@@ -26,7 +26,7 @@ export const projects = [
   },
   {
     id: 2,
-    slug: "aircraft-design-project",
+    slug: "fsoc-research",
     title: "FSOC Link Analysis",
     shortDesc: "Free Space Optical Communication Research",
     fullDesc: "Contributed to analyzing optical turbulence data for free‑space optical communication (FSOC) link availability, using rooftop measurements of Rytov variance and other parameters from TU Delft's optical ground station. I authored the Atmospheric Turbulence section and introduction for the literature review, synthesizing complex research into concise summaries, and created Python visualizations including seasonal/daily availability graphs and multi‑year Rytov variance comparisons. The work highlighted real‑world applications in satellite and horizontal optical links, strengthening my skills in data analysis, scientific writing, and group collaboration.",
@@ -43,7 +43,7 @@ export const projects = [
   },
   {
     id: 3,
-    slug: "rocket-trajectory-simulator",
+    slug: "internship-bot",
     title: "Internship Scanner",
     shortDesc: "Automated internship opportunity finder and tracker",
     fullDesc: "An automated pipeline that continuously scans the web for finance and consulting internship opportunities across Europe, with a focus on lesser-known boutique firms where competition is lower. Built on Google Cloud Functions with a Perplexity AI search integration, the system delivers real-time alerts via Telegram, allowing subscribers to track and manage opportunities directly from their phones. Features include automated opening date reminders, two-way subscriber management, and a custom admin interface for targeted firm scanning — all running at near-zero cost.",

@@ -247,12 +247,12 @@ export default function RocketSimulatorPage() {
                 </p>
 
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-80 md:w-96 lg:w-[32rem] relative aspect-[16/6] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-80 md:w-96 lg:w-[32rem] relative aspect-[2148/913] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
                     src="/images/internship prompt.png"
                     alt="Internship Prompt"
                     fill
-                    className="object-contain"
+                    className="object-contain object-center"
                   />
                 </div>
 
