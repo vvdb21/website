@@ -108,6 +108,7 @@ export const projects = [
       "/images/projects/flight-data-logger-gallery-3.jpg",
     ],
   },
+  /*
   {
     id: 7,
     slug: "project-placeholder-7",
@@ -180,6 +181,7 @@ export const projects = [
     startDate: "2023-06",
     gallery: [],
   },
+  */
 ]
 
 // Featured projects shown on homepage (first 3)

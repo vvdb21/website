@@ -211,10 +211,10 @@ export default function RocketSimulatorPage() {
                   System Architecture
                 </h3>
 
-                <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[19.5/9] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
                     src="/images/telegram.jpeg"
-                    alt="Telegram API interface"
+                    alt="Telegram bot user interface"
                     fill
                     className="object-cover"
                   />
@@ -252,14 +252,6 @@ export default function RocketSimulatorPage() {
                   application pipeline.
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
-                  <Image
-                    src="/images/projects/blog-placeholder-3.jpg"
-                    alt="Monte Carlo results"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
 
 
                 <div className="clear-both" />
