@@ -196,12 +196,12 @@ export default function RocketSimulatorPage() {
                   directly to the user.
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-80 md:w-96 lg:w-[32rem] relative aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-6">
                   <Image
                     src="/images/database.jpeg"
                     alt="Google Sheets Database"
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
 
@@ -243,7 +243,20 @@ export default function RocketSimulatorPage() {
                   A significant technical challenge in the project was designing a robust deduplication 
                   logic to handle redundant job postings across multiple search iterations. Because the 
                   system performs automated scans every three days, it frequently encounters the same 
-                  internship listings that have not yet been removed from company career portals. I 
+                  internship listings that have not yet been removed from company career portals. 
+                </p>
+
+
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-80 md:w-96 lg:w-[32rem] relative aspect-[16/10] rounded-xl overflow-hidden bg-muted mb-6">
+                  <Image
+                    src="/images/internship prompt.png"
+                    alt="Internship Prompt"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+
+                <p>I 
                   addressed this by implementing a custom hashing algorithm that evaluates a combination 
                   of unique identifiers—specifically the firm name and role title—against a persistent 
                   history of previously recorded entries in the Google Sheets database. This ensures 

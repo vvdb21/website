@@ -248,14 +248,10 @@ export function About() {
                     <p className="text-primary font-medium mb-2">
                       Financial Edge
                     </p>
-                    <p className="text-sm text-muted-foreground">
-                      Comprehensive training in financial modeling, valuation techniques, 
-                      and investment banking fundamentals.
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Joined the AI for Investment Banking webinar series to explore applications 
-                      of AI to apply to my own modelling work
-                    </p>
+                    <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
+                      <li>Comprehensive training in financial modeling, valuation techniques, and investment banking fundamentals</li>
+                      <li>Joined the AI for Investment Banking webinar series to explore applications of AI to apply to my own modelling work</li>
+                    </ul>
                   </div>
                 </div>
               </div>
