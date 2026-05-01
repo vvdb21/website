@@ -4,9 +4,9 @@ import { motion } from "framer-motion"
 import { GraduationCap, Code, Wrench, Rocket, Briefcase, BookOpen } from "lucide-react"
 
 const skills = {
-  programming: ["Python", "MATLAB", "C++", "JavaScript"],
-  engineering: ["CAD (SolidWorks)", "XFLR5", "Simulink", "CFD"],
-  tools: ["Git", "LaTeX", "Arduino", "Linux"],
+  programming: ["Python", "PyTorch", "Sklearn"],
+  engineering: ["CAD (CATIA, Fusion 360, Solidworks, Onshape)", "XFLR5", "3D printing", "Wind tunnel testing"],
+  /*tools: ["Git", "LaTeX", "Arduino", "Linux"],*/
 }
 
 export function About() {
@@ -50,14 +50,19 @@ export function About() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-card-foreground mb-1">
-                      BSc Aerospace Engineering
+                      Delft University of Technology
                     </h4>
                     <p className="text-primary font-medium mb-2">
-                      TU Delft <span className="text-muted-foreground font-normal">| Netherlands</span>
+                      BSc Aerospace Engineering <span className="text-muted-foreground font-normal">| Netherlands</span>
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      Focus on flight dynamics, aerodynamics, and propulsion systems. 
-                      Active member of student rocketry and UAV teams.
+                      GPA: 7.0/10.0
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      ACT: 33/36 (98th percentile, 100% in Science)
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      See projects section
                     </p>
                   </div>
                 </div>
@@ -70,17 +75,17 @@ export function About() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-card-foreground mb-1">
-                      International Baccalaureate
+                      Harrow School
                     </h4>
                     <p className="text-primary font-medium mb-2">
-                      Harrow School <span className="text-muted-foreground font-normal">| London</span>
+                      A-Levels and (I)GCSEs <span className="text-muted-foreground font-normal">| London</span>
                     </p>
                     <p className="text-muted-foreground text-sm mb-2">
-                      HL Physics, Mathematics, Chemistry
+                      A-Level Maths (A*), Physics (A), Design & Technology (A), Economics (A) | IGCSEs: 9 A*s, 1 A
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      Strong foundation in mathematics and physics with extended essay 
-                      on rocket propulsion efficiency.
+                      School Ski Team (invited to England training camp), Royal Marines CCF, accepted to UChicago 
+                      'Emerging World Leaders' program and Imperial College London STEM program, among others
                     </p>
                   </div>
                 </div>
@@ -109,14 +114,37 @@ export function About() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-card-foreground mb-1">
-                      Consultant
+                      180 Degrees Consulting
                     </h4>
                     <p className="text-primary font-medium mb-2">
-                      180 Degrees Consulting <span className="text-muted-foreground font-normal">| Rotterdam</span>
+                      Consultant <span className="text-muted-foreground font-normal">| Rotterdam</span>
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      Providing pro-bono consulting services to socially conscious organizations. 
-                      Developing strategic solutions and delivering actionable recommendations to drive impact.
+                      Consulted for a leading European colocation data centre operator, visited Brussels site 
+                      and Amsterdam office to interview C-suite and deliver final presentation
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Developed models for capacity forecasting, revenue optimisation and produced ROI scenarios
+                      and use-case prioritisation rankings
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Feedback from client on models: 'methodologically rigorous… immediately actionable, exactly 
+                      what we needed'
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-card-foreground mb-1">
+                      Global Equity Management
+                    </h4>
+                    <p className="text-primary font-medium mb-2">
+                      Analyst <span className="text-muted-foreground font-normal">| Delft</span>
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Accepted to program as part of Founders Initiative to start TU Delft chapter
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Crafted DCF model to value RTX Corp. and produced comprehensive report on investment thesis, 
+                      presented to leadership with recommendation weak buy
                     </p>
                   </div>
                 </div>
@@ -175,7 +203,7 @@ export function About() {
                 </div>
               </div>
               
-              <div className="p-6 rounded-2xl bg-card backdrop-blur-xl border border-border">
+              {/*<div className="p-6 rounded-2xl bg-card backdrop-blur-xl border border-border">
                 <div className="flex items-center gap-2 mb-4">
                   <Wrench className="w-4 h-4 text-primary" />
                   <h4 className="font-medium text-card-foreground">Development Tools</h4>
@@ -190,7 +218,7 @@ export function About() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
 
@@ -223,6 +251,10 @@ export function About() {
                     <p className="text-sm text-muted-foreground">
                       Comprehensive training in financial modeling, valuation techniques, 
                       and investment banking fundamentals.
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Joined the AI for Investment Banking webinar series to explore applications 
+                      of AI to apply to my own modelling work
                     </p>
                   </div>
                 </div>
