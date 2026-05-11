@@ -19,6 +19,7 @@ export const projects = [
     startDate: "2026-01",
     gallery: [
       "/images/UAV assembled snooker.jpeg",
+      "/images/XFLR5 1.png",
       "/images/UAV test living.jpeg",
       "/images/UAV CAD Iso.jpeg",
       "/images/UAV CAD top.jpeg",
@@ -55,7 +56,7 @@ export const projects = [
       "/images/Internship bot.jpeg",
     ],
   },
-  
+  /*
   {
     id: 4,
     slug: "isa-atmosphere-calculator",
@@ -108,7 +109,7 @@ export const projects = [
       "/images/projects/flight-data-logger-gallery-3.jpg",
     ],
   },
-  /*
+  
   {
     id: 7,
     slug: "project-placeholder-7",
