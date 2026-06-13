@@ -302,6 +302,15 @@ export default function UAVFlyingWingPage() {
                   All critical stability requirements are met. The aircraft is statically stable in pitch, roll and yaw. The short period mode is well-damped and the phugoid is stable with low frequency. Laterally, the roll and Dutch roll modes are stable; the spiral mode shows mild instability consistent with a flat-wing configuration, manageable by both pilot and flight controller. The analysis was conducted on a surfaces-only VLM2 model, so fuselage aerodynamic contributions remain a known limitation.
                 </p>
 
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                  <Image
+                    src="/images/uav disassembled.jpeg"
+                    alt="Assembling the UAV"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
                 <div className="clear-both" />
 
                 <h3 className="font-display text-xl font-semibold text-foreground pt-4">
@@ -348,14 +357,7 @@ export default function UAVFlyingWingPage() {
                   v3 redesign is in progress, targeting improved launch procedure, onboard data logging via SD card, and multi-angle camera coverage for post-flight analysis.
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
-                  <Image
-                    src="/images/uav disassembled.jpeg"
-                    alt="Assembling the UAV"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                
 
                 <div className="clear-both" />
 
