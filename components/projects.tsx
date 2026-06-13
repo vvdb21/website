@@ -15,10 +15,10 @@ export const projects = [
     fullDesc: "Designed, built and tested a fully 3D printed UAS from scratch. The aircraft is a 1.4m wingspan, V-tail pusher configuration. AUW has been reduced from 2.5kg to 1.8kg across design iterations through reduction of printed wall thickness from 2 perimeters to 1. Constructed 50 custom designed 3D printed parts, the goal was to create an airframe that could be rapidly reproduced and repaired using a simple desktop 3D printer, making it suitable for deployment in resource-limited environments.",
     tags: ["XFLR5", "Fusion 360", "3D Printing", "ArduPilot"],
     color: "from-blue-500/20 to-cyan-500/20",
-    image: "/images/UAV assembled snooker.jpeg",
+    image: "/images/v3 front view.jpeg",
     startDate: "2026-01",
     gallery: [
-      "/images/UAV assembled snooker.jpeg",
+      "/images/v3 front view.jpeg",
       "/images/XFLR5 1.png",
       "/images/UAV test living.jpeg",
       "/images/UAV CAD Iso.jpeg",

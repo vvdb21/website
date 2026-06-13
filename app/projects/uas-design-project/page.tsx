@@ -12,6 +12,7 @@ const project = {
   tags: ["XFLR5", "Fusion 360", "3D Printing", "ArduPilot"],
   fullDesc: "Designed, built and tested a fully 3D printed UAS from scratch. The aircraft is a 1.4m wingspan, V-tail pusher configuration. AUW has been reduced from 2.5kg to 1.8kg across design iterations through reduction of printed wall thickness from 2 perimeters to 1. Constructed with 50 custom designed 3D printed parts, the goal was to create an airframe that could be rapidly reproduced and repaired using a simple desktop 3D printer, making it suitable for deployment in resource-limited environments.",
   gallery: [
+      "/images/v3 front view.jpeg",
       "/images/UAV assembled snooker.jpeg",
       "/images/XFLR5 1.png",
       "/images/UAV test living.jpeg",
@@ -260,6 +261,15 @@ export default function UAVFlyingWingPage() {
                   Analysis type: Type 7 Stability Analysis, VLM2 (lifting surfaces only). Condition: level flight at α = 0.10°, V = 17.43 m/s. Model mass: 1.386 kg (primary structural components and battery; excludes flight controller, FPV system, and minor hardware). Full AUW is approximately 1.8 kg.
                 </p>
 
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                  <Image
+                    src="/images/stability analysis.png"
+                    alt="XFLR5 stability analysis chart"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
                 <h4 className="font-semibold text-foreground mt-4">Static Stability</h4>
                 <p>
                   The neutral point (NP) is located at 0.078 m and the centre of pressure (CP) at 0.053 m aft of the reference point, giving a static margin of <strong>11.8% MAC</strong> (MAC = 0.211 m). This confirms the aircraft is statically stable in pitch — the NP lies ahead of the CP, meaning any pitch disturbance generates a restoring moment. An 11.8% margin sits comfortably within the 5–15% range typically targeted for stable fixed-wing UAVs.
@@ -304,15 +314,34 @@ export default function UAVFlyingWingPage() {
                 </p>
 
                 <h4 className="font-semibold text-foreground mt-4">Design Fixes (v2)</h4>
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                  <Image
+                    src="/images/motor tilt.jpeg"
+                    alt="Motor tilt redesign detail"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                  <li>Motor mount tilted to align the thrust vector directly through the centre of gravity</li>
+                  <li>Motor mount tilted about 1.5 degrees to align the thrust vector directly through the centre of gravity</li>
                   <li>V-tail aerofoil changed from cambered to symmetrical section to eliminate zero-deflection downforce</li>
                 </ul>
+
+                <div className="clear-both" />
 
                 <h4 className="font-semibold text-foreground mt-4">Flight Test 2</h4>
                 <p>
                   The second flight test confirmed the aerodynamic fixes — the aircraft flew wings-level immediately after launch, validating both design changes. The flight ended in a crash attributed to insufficient launch speed and throttle input rather than any airframe issue. This was a launch procedure failure, not a design failure.
                 </p>
+
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                  <Image
+                    src="/images/v3 test.jpeg"
+                    alt="V3 flight test image"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
 
                 <h4 className="font-semibold text-foreground mt-4">Current Status</h4>
                 <p>
