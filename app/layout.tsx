@@ -16,7 +16,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Viktor Van den Berghe | Aerospace Engineering Student",
-  description: "Aerospace Engineering student at TU Delft building UAVs",
+  description: "Aerospace Engineering student at TU Delft",
   generator: "v0.app",
   icons: {
     icon: [
