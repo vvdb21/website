@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 const project = {
   title: "Unmanned Aerial System",
   tags: ["XFLR5", "Fusion 360", "3D Printing", "ArduPilot"],
-  fullDesc: "Designed, built and tested a fully 3D printed UAS from scratch. The aircraft is 1.4m wingspan, V-tail pusher configuration with an AUW of ~2.5kg. Constructed with 50 custom designed 3D printed parts, the goal was to create an airframe that could be rapidly reproduced and repaired using a simple desktop 3D printer, making it suitable for deployment in resource-limited environments.",
+  fullDesc: "Designed, built and tested a fully 3D printed UAS from scratch. The aircraft is a 1.4m wingspan, V-tail pusher configuration. AUW has been reduced from 2.5kg to 1.8kg across design iterations through reduction of printed wall thickness from 2 perimeters to 1. Constructed with 50 custom designed 3D printed parts, the goal was to create an airframe that could be rapidly reproduced and repaired using a simple desktop 3D printer, making it suitable for deployment in resource-limited environments.",
   gallery: [
       "/images/UAV assembled snooker.jpeg",
       "/images/XFLR5 1.png",
@@ -158,7 +158,7 @@ export default function UAVFlyingWingPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Status</h3>
-                  <p className="text-foreground">Redesign in Progress</p>
+                  <p className="text-foreground">v3 Redesign in Progress — 2 flight tests completed</p>
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Institution</h3>
@@ -245,9 +245,51 @@ export default function UAVFlyingWingPage() {
                 </p>
 
                 <p>
-                  The onboard GPS allows fully autonomous waypoint navigation, enabling the aircraft to execute pre‑planned 
-                  missions without manual input. It also allows for return‑to‑home functionality in case of signal loss or 
-                  low battery, enhancing safety and reliability.
+                  The flight controller supports GPS-assisted stabilisation and return-to-home functionality. Full
+                  autonomous waypoint navigation is planned for a future test campaign following completion of
+                  stabilised flight validation.
+                </p>
+
+                <div className="clear-both" />
+
+                <h3 className="font-display text-xl font-semibold text-foreground pt-4">
+                  Stability Analysis (XFLR5 — v3 Airframe)
+                </h3>
+
+                <p>
+                  Analysis type: Type 7 Stability Analysis, VLM2 (lifting surfaces only). Condition: level flight at α = 0.10°, V = 17.43 m/s. Model mass: 1.386 kg (primary structural components and battery; excludes flight controller, FPV system, and minor hardware). Full AUW is approximately 1.8 kg.
+                </p>
+
+                <h4 className="font-semibold text-foreground mt-4">Static Stability</h4>
+                <p>
+                  The neutral point (NP) is located at 0.078 m and the centre of pressure (CP) at 0.053 m aft of the reference point, giving a static margin of <strong>11.8% MAC</strong> (MAC = 0.211 m). This confirms the aircraft is statically stable in pitch — the NP lies ahead of the CP, meaning any pitch disturbance generates a restoring moment. An 11.8% margin sits comfortably within the 5–15% range typically targeted for stable fixed-wing UAVs.
+                </p>
+                <p>
+                  This is supported by the pitch stability derivative <strong>Cmα = -0.531</strong>, which is negative as required — indicating the aircraft generates a nose-down pitching moment with increasing angle of attack. Directional stability is confirmed by <strong>Cnβ = +0.042</strong> and roll stability by <strong>Clβ = -0.015</strong>, a small dihedral effect consistent with a flat-wing design.
+                </p>
+
+                <h4 className="font-semibold text-foreground mt-4">Longitudinal Dynamic Modes</h4>
+                <p>
+                  <strong>Short period mode</strong> — Eigenvalue: −6.139 ± 8.412i | Frequency: 1.658 Hz | Damping ratio: 0.590. The short period mode is well-damped and will be largely imperceptible to the pilot in practice.
+                </p>
+                <p>
+                  <strong>Phugoid mode</strong> — Eigenvalue: −0.006 ± 0.690i | Frequency: 0.110 Hz | Damping ratio: 0.008. The phugoid is lightly damped but stable, with a slow cycle that is easily corrected by the pilot or flight controller.
+                </p>
+
+                <h4 className="font-semibold text-foreground mt-4">Lateral Dynamic Modes</h4>
+                <p>
+                  <strong>Roll mode</strong> — Eigenvalue: −23.213 | Time constant: 0.043 s. This indicates responsive, predictable roll behaviour.
+                </p>
+                <p>
+                  <strong>Dutch roll mode</strong> — Eigenvalue: −0.494 ± 5.139i | Frequency: 0.822 Hz | Damping ratio: 0.096. Stable and convergent, with further suppression expected from ArduPlane&apos;s yaw damper.
+                </p>
+                <p>
+                  <strong>Spiral mode</strong> — Eigenvalue: +0.096 | Time to double: 7.2 s. The mild instability is manageable by both pilot and flight controller in stabilised mode.
+                </p>
+
+                <h4 className="font-semibold text-foreground mt-4">Summary</h4>
+                <p>
+                  All critical stability requirements are met. The aircraft is statically stable in pitch, roll and yaw. The short period mode is well-damped and the phugoid is stable with low frequency. Laterally, the roll and Dutch roll modes are stable; the spiral mode shows mild instability consistent with a flat-wing configuration, manageable by both pilot and flight controller. The analysis was conducted on a surfaces-only VLM2 model, so fuselage aerodynamic contributions remain a known limitation.
                 </p>
 
                 <div className="clear-both" />
@@ -256,12 +298,25 @@ export default function UAVFlyingWingPage() {
                   Flight Testing Results
                 </h3>
 
+                <h4 className="font-semibold text-foreground">Flight Test 1</h4>
                 <p>
-                  The intial flight test resulted in the loss of the aircraft, most likely due to a combination of pilot error
-                  and suboptimal center of gravity placement. The aircraft was recovered and underwent a redesign to address these 
-                  issues, namely by reducing wall thickness of printed parts to increase the contribution of the battery to the 
-                  overall center of gravity. Second flight test is planned for May 2026.
-                  
+                  The initial flight test resulted in the loss of the aircraft. Root cause analysis identified two contributing factors: the thrust vector from the motor acting below the centre of gravity, creating a pitch-up moment; and the cambered V-tail aerofoil generating downward lift, compounding the pitch-up tendency. The aircraft was recovered for redesign.
+                </p>
+
+                <h4 className="font-semibold text-foreground mt-4">Design Fixes (v2)</h4>
+                <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+                  <li>Motor mount tilted to align the thrust vector directly through the centre of gravity</li>
+                  <li>V-tail aerofoil changed from cambered to symmetrical section to eliminate zero-deflection downforce</li>
+                </ul>
+
+                <h4 className="font-semibold text-foreground mt-4">Flight Test 2</h4>
+                <p>
+                  The second flight test confirmed the aerodynamic fixes — the aircraft flew wings-level immediately after launch, validating both design changes. The flight ended in a crash attributed to insufficient launch speed and throttle input rather than any airframe issue. This was a launch procedure failure, not a design failure.
+                </p>
+
+                <h4 className="font-semibold text-foreground mt-4">Current Status</h4>
+                <p>
+                  v3 redesign is in progress, targeting improved launch procedure, onboard data logging via SD card, and multi-angle camera coverage for post-flight analysis.
                 </p>
 
                 <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
@@ -273,13 +328,6 @@ export default function UAVFlyingWingPage() {
                   />
                 </div>
 
-                <p>
-                  Improvements will be made to the flight test setup to allow for better data collection and analysis. This includes the 
-                  addition of an SD card on the flight controller to log detailed flight data for post‑flight analysis, as well as the 
-                  addition of several cameras to capture different angles of the flight for visual inspection and performance evaluation.
-                </p>
-
-
                 <div className="clear-both" />
 
                 <h3 className="font-display text-xl font-semibold text-foreground pt-4">
@@ -287,7 +335,7 @@ export default function UAVFlyingWingPage() {
                 </h3>
 
                 <p>
-                  The project is still a work in progress.
+                  The two flight test campaigns reinforced the importance of systematic root cause analysis over iterative trial and error. The v1 pitch-up failure was initially attributed to pilot error, but closer analysis revealed two independent aerodynamic causes — both of which were resolved in v2. The v2 wings-level flight confirmed this diagnosis. Future test campaigns will include onboard data logging and multi-angle video to reduce reliance on visual observation for post-flight analysis.
                 </p>
 
                 

@@ -5,7 +5,13 @@ import { GraduationCap, Code, Wrench, Rocket, Briefcase, BookOpen } from "lucide
 
 const skills = {
   programming: ["Python", "PyTorch", "Sklearn"],
-  engineering: ["CAD (CATIA, Fusion 360, Solidworks, Onshape)", "XFLR5", "3D printing", "Wind tunnel testing"],
+  engineering: [
+    "CAD (CATIA, Fusion 360, Solidworks, Onshape)",
+    "XFLR5",
+    "ArduPilot/ArduPlane",
+    "3D printing (LW-PLA)",
+    "Wind tunnel testing",
+  ],
   /*tools: ["Git", "LaTeX", "Arduino", "Linux"],*/
 }
 
@@ -56,9 +62,9 @@ export function About() {
                       BSc Aerospace Engineering <span className="text-muted-foreground font-normal">| Netherlands | 2024 - 2028</span>
                     </p>
                     <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
-                      <li>GPA: 7.0/10.0</li>
-                      <li>ACT: 33/36 (98th percentile, 100% in Science)</li>
-                      <li>See projects section</li>
+                      <li>GPA: 7.0/10.0 | ACT: 33/36 (98th percentile, 100% in Science)</li>
+                      <li>Relevant modules: Sub- and Supersonic Aerodynamics, Low Speed Wind Tunnel Testing, Flight Mechanics & Propulsion, Intro to Aerospace Engineering</li>
+                      <li>Research: Study on the Effect of Atmospheric Turbulence on Free Space Optical Communications (awaiting publication)</li>
                     </ul>
                   </div>
                 </div>
