@@ -184,7 +184,7 @@ export default function RocketSimulatorPage() {
               <section className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
                 <h2 className="font-display text-2xl font-semibold text-foreground mb-4">Project Overview</h2>
                 <p>
-                  Manual internship hunting is slow, repetitive, and biased towards well-known firms — because those are the ones that show up in generic searches. This project replaces that process with an intelligent monitoring system that runs continuously in the background, proactively identifying and delivering relevant opportunities without any manual effort.
+                  Manual internship hunting is slow, repetitive, and biased towards well-known firms - because those are the ones that show up in generic searches. This project replaces that process with an intelligent monitoring system that runs continuously in the background, proactively identifying and delivering relevant opportunities without any manual effort.
                 </p>
                 <p className="mt-4">
                   The bot covers management consulting, strategy consulting, investment banking, asset management, private equity, venture capital, hedge funds, and aerospace engineering roles across the UK, Belgium, Netherlands, France, Germany, Spain, Switzerland, and Italy. It targets penultimate-year undergraduate positions specifically, and deliberately prioritises boutique and SME firms alongside household names — the ones that are often overlooked but are significantly less competitive to apply to.
