@@ -18,7 +18,7 @@ const project = {
 const stats = [
   { value: "200+", label: "internships found" },
   { value: "8", label: "countries covered" },
-  { value: "$0.82", label: "total cost since March 2025" },
+  { value: "$0.82", label: "total cost since March 2026" },
 ]
 
 export default function RocketSimulatorPage() {
