@@ -333,7 +333,7 @@ export default function UAVFlyingWingPage() {
                 </div>
                 <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
                   <li>Motor mount tilted about 1.5 degrees to align the thrust vector directly through the centre of gravity</li>
-                  <li>V-tail aerofoil changed from cambered to symmetrical section to eliminate zero-deflection downforce</li>
+                  <li>V-tail airfoil changed from cambered to symmetrical section to eliminate reduce overall downforce and improve handling consistency in yaw</li>
                 </ul>
 
                 <div className="clear-both" />
