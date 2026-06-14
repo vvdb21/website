@@ -222,8 +222,8 @@ export default function RocketSimulatorPage() {
 
               <section className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
                 <h2 className="font-display text-2xl font-semibold text-foreground mb-4">Scanning Engine</h2>
-                <figure className="mb-4 rounded-2xl border border-border bg-background p-4 shadow-sm">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-muted sm:aspect-[3/4] md:aspect-[4/5]">
+                <figure className="mb-4 rounded-2xl border border-border bg-background p-2 shadow-sm sm:p-3">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-muted sm:aspect-[16/9]">
                     <Image
                       src="/images/internship prompt.png"
                       alt="The structured prompt sent to Perplexity AI on each scan cycle, requesting a strict JSON response with all required opportunity fields."
@@ -244,7 +244,7 @@ export default function RocketSimulatorPage() {
 
               <section className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
                 <h2 className="font-display text-2xl font-semibold text-foreground mb-4">Deduplication &amp; Data Storage</h2>
-                <figure className="mb-4 rounded-2xl border border-border bg-background p-4 shadow-sm">
+                <figure className="mb-4 rounded-2xl border border-border bg-background p-2 shadow-sm sm:p-3">
                   <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-muted">
                     <Image
                       src="/images/database.jpeg"
