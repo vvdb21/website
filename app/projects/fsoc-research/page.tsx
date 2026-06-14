@@ -72,7 +72,7 @@ export default function FsocResearchPage() {
             <section className="space-y-4 rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
               <h2 className="font-display text-2xl font-semibold text-foreground">Dataset &amp; Measurement Setup</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Two complementary measurement setups were used. For the horizontal link, a scintillometer measured the refractive index structure constant (C²ₙ) along a 950 m path between the Aerospace Engineering faculty building and Delftechpark, with readings taken every 10 minutes from November 2022 to November 2025. The C²ₙ values were converted to Rytov variance (σ²_R) to quantify scintillation strength.
+                Two complementary measurement setups were used. For the horizontal link, a scintillometer measured the refractive index structure constant (C²ₙ) along a 950 m path between the Aerospace Engineering faculty building and Delftechpark, with readings taken every 10 minutes from November 2022 to November 2025. The C²ₙ values were converted to Rytov variance (σ<sub>R</sub><sup>2</sup>) to quantify scintillation strength.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 For the vertical link, infrared and visible-light cameras on the same rooftop observed Polaris at night and the sun during the day throughout 2025, measuring the Fried parameter (r₀) — a key indicator of atmospheric coherence. Data was recorded every minute.
@@ -94,7 +94,7 @@ export default function FsocResearchPage() {
               <div className="space-y-4">
                 <h2 className="font-display text-2xl font-semibold text-foreground">Horizontal Link Results</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  The horizontal link was evaluated using Rytov variance, with turbulence classified as very weak (σ²_R &lt; 0.3), weak (0.3–1.0), or strong (&gt; 1.0). The analysis revealed a clear seasonal pattern: winter and late autumn consistently outperform spring and summer in terms of availability. This is driven primarily by daytime conditions — solar heating creates temperature fluctuations near the ground, forming turbulent “hot pockets” that increase scintillation. At night, availability is almost entirely independent of season, with roughly 80–85% of readings falling below σ²_R = 0.3 regardless of time of year.
+                  The horizontal link was evaluated using Rytov variance, with turbulence classified as very weak (σ<sub>R</sub><sup>2</sup> &lt; 0.3), weak (0.3–1.0), or strong (&gt; 1.0). The analysis revealed a clear seasonal pattern: winter and late autumn consistently outperform spring and summer in terms of availability. This is driven primarily by daytime conditions — solar heating creates temperature fluctuations near the ground, forming turbulent “hot pockets” that increase scintillation. At night, availability is almost entirely independent of season, with roughly 80–85% of readings falling below σ<sub>R</sub><sup>2</sup> = 0.3 regardless of time of year.
                 </p>
               </div>
 
@@ -105,8 +105,14 @@ export default function FsocResearchPage() {
                   { src: "/images/fig4_rytov_histogram.png.png", alt: "Figure 4 — Histogram of monthly Rytov variance threshold fractions.", caption: "Figure 4 — Fraction of monthly readings within each Rytov variance threshold, confirming the winter dominance in availability." },
                 ].map((item) => (
                   <figure key={item.src} className="space-y-3 rounded-2xl border border-border bg-background p-4 shadow-sm">
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted">
-                      <Image src={item.src} alt={item.alt} fill className="object-cover" />
+                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-muted">
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-contain"
+                      />
                     </div>
                     <figcaption className="text-sm text-muted-foreground">{item.caption}</figcaption>
                   </figure>
@@ -115,14 +121,14 @@ export default function FsocResearchPage() {
 
               <div className="space-y-3">
                 <h3 className="font-display text-xl font-semibold text-foreground">Monthly Availability Ranking (Horizontal Link)</h3>
-                <p className="text-muted-foreground">Ranked by percentage of time with σ²_R ≤ 0.3 (very weak turbulence):</p>
+                <p className="text-muted-foreground">Ranked by percentage of time with σ<sub>R</sub><sup>2</sup> ≤ 0.3 (very weak turbulence):</p>
                 <div className="overflow-x-auto rounded-2xl border border-border bg-background">
                   <table className="min-w-full text-sm">
                     <thead className="bg-muted/70 text-left text-muted-foreground">
                       <tr>
                         <th className="px-4 py-3 font-medium">Rank</th>
                         <th className="px-4 py-3 font-medium">Month</th>
-                        <th className="px-4 py-3 font-medium">% Time σ²_R ≤ 0.3</th>
+                        <th className="px-4 py-3 font-medium">% Time σ<sub>R</sub><sup>2</sup> ≤ 0.3</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -161,12 +167,13 @@ export default function FsocResearchPage() {
               </div>
 
               <figure className="space-y-3 rounded-2xl border border-border bg-background p-4 shadow-sm">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-muted">
                   <Image
                     src="/images/fig8_dr0_vertical.png.png"
                     alt="Figure 8 — D/r₀ turbulence classification histogram for the vertical link by month."
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain"
                   />
                 </div>
                 <figcaption className="text-sm text-muted-foreground">
@@ -220,12 +227,13 @@ export default function FsocResearchPage() {
               </p>
 
               <figure className="space-y-3 rounded-2xl border border-border bg-background p-4 shadow-sm">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-muted">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-muted">
                   <Image
                     src="/images/fig12_hv_model.png.png"
                     alt="Figure 12 — Hufnagel-Valley model predictions versus observed Fried parameter for both daytime and nighttime conditions."
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain"
                   />
                 </div>
                 <figcaption className="text-sm text-muted-foreground">
