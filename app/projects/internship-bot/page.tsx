@@ -10,18 +10,15 @@ import { Button } from "@/components/ui/button"
 const project = {
   title: "Internship Scanner",
   tags: ["Python", "Google Cloud Functions", "Telegram API", "Perplexity API"],
-  fullDesc: "An automated pipeline that continuously scans the web for finance and consulting internship opportunities across Europe, with a focus on lesser-known boutique firms where competition is lower. Built on Google Cloud Functions with a Perplexity AI search integration, the system delivers real-time alerts via Telegram, allowing subscribers to track and manage opportunities directly from their phones. Features include automated opening date reminders, two-way subscriber management, and a custom admin interface for targeted firm scanning — all running at near-zero cost.",
-  gallery: [
-    "/images/Internship bot.jpeg",
-  ],
+  fullDesc:
+    "A fully automated, cloud-native pipeline that continuously scans the web for finance, consulting, and aerospace engineering internship opportunities across eight European countries — with a deliberate focus on boutique and lesser-known firms where competition is lower. Built on Google Cloud Functions with Perplexity AI search and a Telegram bot interface, the system has surfaced over 200 opportunities since launch at a total infrastructure cost of $0.82.",
+  gallery: ["/images/Internship bot.jpeg"],
 }
 
-const keyFeatures = [
-  "Perplexity AI integration for dynamic web scraping and opportunity discovery",
-  "Hosted on Google Cloud Functions for scalable, serverless execution with minimal maintenance",
-  "Real-time Telegram alerts for new internship postings, with interactive subscriber management",
-  "Google Sheets database for tracking and managing internship applications and deadlines",
-  "Code on my GitHub",
+const stats = [
+  { value: "200+", label: "internships found" },
+  { value: "8", label: "countries covered" },
+  { value: "$0.82", label: "total cost since March 2025" },
 ]
 
 export default function RocketSimulatorPage() {
@@ -133,21 +130,29 @@ export default function RocketSimulatorPage() {
               ))}
             </div>
 
-            {/* Description */}
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
               {project.fullDesc}
             </p>
 
-            {/* Project Details */}
+            <div className="grid gap-4 md:grid-cols-3 mb-8">
+              {stats.map((stat) => (
+                <article
+                  key={stat.label}
+                  className="rounded-2xl border border-border bg-card p-5 shadow-sm"
+                >
+                  <p className="text-3xl font-semibold text-foreground">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                </article>
+              ))}
+            </div>
+
             <div className="bg-card backdrop-blur-xl border border-border rounded-2xl p-6 sm:p-8 mt-8">
-              <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
-                Project Details
-              </h2>
-              
+              <h2 className="font-display text-2xl font-semibold text-foreground mb-6">Project Details</h2>
+
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Technologies</h3>
-                  <p className="text-foreground">{project.tags.join(", ")}</p>
+                  <p className="text-foreground">Python, Google Cloud Functions, Telegram API, Perplexity API</p>
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Category</h3>
@@ -155,152 +160,119 @@ export default function RocketSimulatorPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Status</h3>
-                  <p className="text-foreground">Completed</p>
+                  <p className="text-foreground">Active</p>
                 </div>
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Institution</h3>
                   <p className="text-foreground">Independent Project</p>
                 </div>
+                <div className="sm:col-span-2">
+                  <h3 className="text-sm font-medium text-muted-foreground mb-2">GitHub</h3>
+                  <a
+                    href="https://github.com/vvdb21"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary underline-offset-4 hover:underline"
+                  >
+                    https://github.com/vvdb21
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Key Features */}
-            <div className="mt-8">
-              <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
-                Key Features
-              </h2>
-              <ul className="space-y-3 text-muted-foreground mb-8">
-                {keyFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Blog-style Content - EDIT YOUR CONTENT HERE */}
-              <div className="mt-12 space-y-8 text-muted-foreground leading-relaxed">
-                <h3 className="font-display text-xl font-semibold text-foreground">
-                  Project Overview
-                </h3>
-                
+            <div className="mt-8 space-y-8 text-muted-foreground leading-relaxed">
+              <section className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">Project Overview</h2>
                 <p>
-                  The Internship Discovery & Management Bot is a fully automated, cloud-native 
-                  pipeline designed to solve the inefficiency of manual job hunting in competitive 
-                  finance and consulting markets. By replacing tedious, repetitive web searches with 
-                  an intelligent monitoring system, the project ensures that users stay ahead of 
-                  application windows—specifically targeting high-value opportunities at boutique 
-                  firms that are often overlooked in mass-market searches. The system functions as 
-                  a continuous intelligence layer, proactively identifying and filtering relevant 
-                  roles from across the European market to deliver high-quality, actionable leads 
-                  directly to the user.
+                  Manual internship hunting is slow, repetitive, and biased towards well-known firms — because those are the ones that show up in generic searches. This project replaces that process with an intelligent monitoring system that runs continuously in the background, proactively identifying and delivering relevant opportunities without any manual effort.
                 </p>
+                <p className="mt-4">
+                  The bot covers management consulting, strategy consulting, investment banking, asset management, private equity, venture capital, hedge funds, and aerospace engineering roles across the UK, Belgium, Netherlands, France, Germany, Spain, Switzerland, and Italy. It targets penultimate-year undergraduate positions specifically, and deliberately prioritises boutique and SME firms alongside household names — the ones that are often overlooked but are significantly less competitive to apply to.
+                </p>
+              </section>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 w-full sm:w-96 md:w-[40rem] lg:w-[48rem] relative aspect-[14/5] rounded-xl overflow-hidden bg-muted mb-6">
-                  <Image
-                    src="/images/database.jpeg"
-                    alt="Google Sheets Database"
-                    fill
-                    className="object-contain object-center"
-                  />
-                </div>
-
-                <div className="clear-both" />
-
-                <h3 className="font-display text-xl font-semibold text-foreground pt-4">
-                  System Architecture
-                </h3>
-
-                <div className="sm:float-left sm:mr-6 sm:mb-4 w-56 sm:w-64 md:w-72 relative aspect-[9/19.5] rounded-xl overflow-hidden bg-muted mb-6">
-                  <Image
-                    src="/images/telegram.jpeg"
-                    alt="Telegram bot user interface"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-
+              <section className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">System Architecture</h2>
+                <figure className="mb-4 rounded-2xl border border-border bg-background p-4 shadow-sm">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-muted sm:aspect-[3/4] md:aspect-[4/5]">
+                    <Image
+                      src="/images/telegram.jpeg"
+                      alt="The Telegram bot interface — users receive alerts and interact with the system entirely from their phones."
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-contain"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm text-muted-foreground">The Telegram bot interface — users receive alerts and interact with the system entirely from their phones.</figcaption>
+                </figure>
                 <p>
-                  The architecture follows a modular, serverless design centered on Google Cloud Functions, which 
-                  execute discrete logic for scanning, notification, and data management. The research engine leverages 
-                  the Perplexity AI API to perform automated web scraping and data extraction, with results processed 
-                  through a deduplication layer to ensure only unique opportunities are recorded. This data is 
-                  synchronized with a Google Sheets backend, which serves as both a database and an administrative 
-                  dashboard for the pipeline. Inter-service communication is facilitated via Telegram 
-                  API, providing a bidirectional interface that allows for immediate status updates and interaction. 
-                  The entire infrastructure is orchestrated by Cloud Scheduler, which triggers periodic, low-cost scans 
-                  while maintaining minimal overhead by remaining idle between operations.
+                  The system follows a modular, serverless design built on Google Cloud Functions. Five discrete endpoints handle different parts of the pipeline:
                 </p>
-
-
-                <div className="clear-both" />
-
-                <h3 className="font-display text-xl font-semibold text-foreground pt-4">
-                  Deduplication
-                </h3>
-
-                <p>
-                  A significant technical challenge in the project was designing a robust deduplication 
-                  logic to handle redundant job postings across multiple search iterations. Because the 
-                  system performs automated scans every three days, it frequently encounters the same 
-                  internship listings that have not yet been removed from company career portals. 
-                </p>
-
-
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-80 md:w-96 lg:w-[32rem] relative aspect-[2148/913] rounded-xl overflow-hidden bg-muted mb-6">
-                  <Image
-                    src="/images/internship prompt.png"
-                    alt="Internship Prompt"
-                    fill
-                    className="object-contain object-center"
-                  />
-                </div>
-
-                <p>I 
-                  addressed this by implementing a custom hashing algorithm that evaluates a combination 
-                  of unique identifiers—specifically the firm name and role title—against a persistent 
-                  history of previously recorded entries in the Google Sheets database. This ensures 
-                  that the system only alerts the user to fresh, unique opportunities, effectively
-                  filtering out thousands of redundant signals and maintaining the integrity of the 
-                  application pipeline.
-                </p>
-
-
-
-                <div className="clear-both" />
-
-                <h3 className="font-display text-xl font-semibold text-foreground pt-4">
-                  Future Improvements
-                </h3>
-
-                <p>
-                  While the current system provides a robust framework for internship discovery, several potential 
-                  enhancements could further refine its utility and scalability. These are ideas currently under 
-                  consideration for future development:
-                </p>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>
-                    <strong>Intelligent Filtering:</strong> Integrating advanced natural language processing to perform "fit" 
-                    analysis on job descriptions, allowing for more granular filtering based on specific organizational 
-                    culture or technical skill requirements.
-                  </li>
-                  <li>
-                    <strong>Dedicated Dashboard:</strong> Transitioning from the current spreadsheet-based interface to a 
-                    custom web dashboard, which would provide interactive application funnel analytics and advanced 
-                    performance visualization.
-                  </li>
-                  <li>
-                    <strong>Expanded Scope:</strong> Scaling the search parameters to track full-time graduate programs 
-                    and entry-level career opportunities, extending the system's value beyond the student internship lifecycle.
-                  </li>
-                  <li>
-                    <strong>Enhanced Reliability:</strong> Implementing a more sophisticated logging and error-handling suite 
-                    to provide proactive monitoring, ensuring immediate recovery from failed API calls or synchronization 
-                    interruptions.
-                  </li>
+                <ul className="mt-4 list-disc space-y-2 pl-5">
+                  <li><strong>/scan</strong> — the core scheduled function, triggered every three days by Cloud Scheduler. It queries the Perplexity AI API to search for new internship opportunities across the target sectors and geographies, processes the results, deduplicates against the existing database, and pushes alerts to all subscribers via Telegram.</li>
+                  <li><strong>/scan_firms</strong> — an admin-triggered endpoint used at the start of each internship cycle to seed the database with opportunities from specific named firms. This bulk-seeds well-known large firms upfront, so that subsequent scheduled scans can focus on surfacing boutique and lesser-known opportunities not already in the system.</li>
+                  <li><strong>/reply</strong> — handles all inbound Telegram messages. Users reply YES or NO to each alert to save or dismiss an opportunity, type APPLIED to retrieve their full saved list, and LEAVE or JOIN to manage their subscription.</li>
+                  <li><strong>/remind</strong> — checks the database daily and sends personalised opening date reminders to relevant subscribers, both one week before and on the day an application window opens.</li>
+                  <li><strong>/broadcast</strong> — an admin endpoint for sending a manual message to all subscribers.</li>
                 </ul>
+                <p className="mt-4">
+                  All endpoints are secured with environment variables. The entire system runs idle between scheduled triggers, keeping infrastructure costs near zero.
+                </p>
+              </section>
 
-              </div>
+              <section className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">Scanning Engine</h2>
+                <figure className="mb-4 rounded-2xl border border-border bg-background p-4 shadow-sm">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-muted sm:aspect-[3/4] md:aspect-[4/5]">
+                    <Image
+                      src="/images/internship prompt.png"
+                      alt="The structured prompt sent to Perplexity AI on each scan cycle, requesting a strict JSON response with all required opportunity fields."
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-contain"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm text-muted-foreground">The structured prompt sent to Perplexity AI on each scan cycle, requesting a strict JSON response with all required opportunity fields.</figcaption>
+                </figure>
+                <p>
+                  Each scan queries Perplexity AI&apos;s sonar-pro model with a structured prompt that requests a strict JSON response — no markdown, no preamble. The prompt specifies the target sectors, geographies, firm sizes, degree level, and year group, and instructs the model to source directly from company career pages, LinkedIn, Glassdoor, and Indeed. The system prompt enforces JSON-only output, and the response is parsed and validated before any data is written.
+                </p>
+                <p className="mt-4">
+                  Each opportunity is returned with: firm name, role title, CV and cover letter requirements, application open and close dates, a direct URL to the application page, location, and firm size classification (large / boutique / SME).
+                </p>
+              </section>
+
+              <section className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">Deduplication &amp; Data Storage</h2>
+                <figure className="mb-4 rounded-2xl border border-border bg-background p-4 shadow-sm">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-muted">
+                    <Image
+                      src="/images/database.jpeg"
+                      alt="The Google Sheets backend, which serves as both the opportunity database and the admin dashboard."
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-contain"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm text-muted-foreground">The Google Sheets backend, which serves as both the opportunity database and the admin dashboard.</figcaption>
+                </figure>
+                <p>
+                  Because the system scans every three days, it frequently encounters listings that were already found in a previous cycle. A deduplication layer checks every incoming result against the full history of recorded entries in the Google Sheets database, matching on firm name and role title. Only genuinely new opportunities trigger a Telegram alert and a new database row.
+                </p>
+                <p className="mt-4">
+                  Google Sheets serves as the persistent backend — storing opportunity IDs, firm and role details, application requirements, dates, URLs, firm size, status, and a per-opportunity record of which subscribers have saved it. This doubles as a lightweight admin dashboard, giving a live view of everything the system has found.
+                </p>
+              </section>
+
+              <section className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                <h2 className="font-display text-2xl font-semibold text-foreground mb-4">Future Improvements</h2>
+                <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
+                  <li><strong className="text-foreground">Intelligent fit filtering:</strong> Integrating NLP to score job descriptions against a target profile, allowing the system to rank and filter opportunities by cultural or technical fit before sending alerts.</li>
+                  <li><strong className="text-foreground">Custom web dashboard:</strong> Replacing the Google Sheets interface with a purpose-built dashboard offering application funnel analytics and deadline visualisation.</li>
+                  <li><strong className="text-foreground">Expanded scope:</strong> Extending the search parameters to cover graduate schemes and entry-level full-time roles, making the system useful beyond the internship lifecycle.</li>
+                  <li><strong className="text-foreground">Improved reliability:</strong> Adding structured logging and error handling to provide proactive monitoring and automatic recovery from failed API calls or sync interruptions.</li>
+                </ul>
+              </section>
             </div>
           </motion.div>
         </div>
