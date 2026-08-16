@@ -9,9 +9,11 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden text-background"
     >
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-no-repeat"
-        style={{ backgroundImage: "url('/images/F15.jpg')", backgroundPosition: "30% center" }}
+      <img
+        src="/images/F15.jpg"
+        alt="Hero background"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "80% center", transform: "scale(1.15)" }}
       />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
