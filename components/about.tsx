@@ -62,9 +62,9 @@ export function About() {
                       BSc Aerospace Engineering <span className="text-muted-foreground font-normal">| Netherlands | 2024 - 2028</span>
                     </p>
                     <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
-                      <li>GPA: 7.0/10.0 | ACT: 33/36 (98th percentile, 100% in Science)</li>
+                      <li>GPA: 7.1/10.0 | ACT: 33/36 (98th percentile, 100% in Science)</li>
                       <li>Relevant modules: Sub- and Supersonic Aerodynamics, Low Speed Wind Tunnel Testing, Flight Mechanics & Propulsion, Intro to Aerospace Engineering</li>
-                      <li>Research: Study on the Effect of Atmospheric Turbulence on Free Space Optical Communications (awaiting publication)</li>
+                      <li>Research: Study on the Effect of Atmospheric Turbulence on Free Space Optical Communications (currently under review by our university project supervisor)</li>
                     </ul>
                   </div>
                 </div>
@@ -83,10 +83,10 @@ export function About() {
                       A-Levels and (I)GCSEs <span className="text-muted-foreground font-normal">| London | 2019 - 2024</span>
                     </p>
                     <p className="text-muted-foreground text-sm mb-2">
-                      A-Level Maths (A*), Physics (A), Design & Technology (A), Economics (A) | IGCSEs: 9 A*s, 1 A
+                      A-Level Maths (A*), Physics (A), Design, Technology & Engineering (A), Economics (A) | IGCSEs: 9 A*s, 1 A
                     </p>
                     <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
-                      <li>School Ski Team (invited to England training camp), Royal Marines CCF, accepted to UChicago 
+                      <li>Selected for ESSKIA National Ski Squad, Royal Marines CCF, accepted to UChicago 
                       'Emerging World Leaders' program and Imperial College London STEM program, among others</li>
                     </ul>
                   </div>
@@ -146,7 +146,7 @@ export function About() {
                     </p>
                     <ul className="text-sm text-muted-foreground list-disc list-outside ml-4 space-y-1">
                       <li>Accepted to program as part of Founders Initiative to start TU Delft chapter</li>
-                      <li>Crafted DCF model to value RTX Corp. and produced comprehensive report on investment thesis, presented to leadership with recommendation weak buy</li>
+                      <li>Crafted DCF model to value RTX Corp. and produced comprehensive report on investment thesis, presented to leadership with recommendation HOLD</li>
                     </ul>
                   </div>
                 </div>

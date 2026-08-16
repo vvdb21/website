@@ -259,7 +259,7 @@ export default function FsocResearchPage() {
             <section className="space-y-4 rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
               <h2 className="font-display text-2xl font-semibold text-foreground">Publication Status</h2>
               <p className="text-muted-foreground leading-relaxed">
-                This paper was produced as part of the Test, Analysis and Simulation (AE2224-I) course at TU Delft&apos;s Faculty of Aerospace Engineering. It is currently under review by faculty and is being prepared for submission to a peer-reviewed journal. A Google Scholar link will be added here upon publication.
+                Research paper produced, currently under review by our university project supervisor.
               </p>
             </section>
 
