@@ -11,7 +11,7 @@ export function Hero() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-no-repeat"
-        style={{ backgroundImage: "url('/images/F15.jpg')", backgroundPosition: "40% center" }}
+        style={{ backgroundImage: "url('/images/F15.jpg')", backgroundPosition: "30% center" }}
       />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
