@@ -10,9 +10,9 @@ export function Hero() {
     >
       {/* Background Image */}
       <img
-        src="/images/F15 2.jpg"
+        src="/images/F15 3.jpg"
         alt="Hero background"
-        className="absolute inset-0 w-full h-full object-contain"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
