@@ -6,14 +6,13 @@ export function Hero() {
   return ( 
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden text-background"
+      className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden text-foreground"
     >
       {/* Background Image */}
       <img
         src="/images/F15 2.jpg"
         alt="Hero background"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: "80% center", transform: "scale(1.15)" }}
+        className="absolute inset-0 w-full h-full object-contain"
       />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">

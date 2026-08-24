@@ -47,7 +47,7 @@ export function Navigation() {
 
   const mutedClass = isScrolled
     ? "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-    : "text-background/70 hover:text-background hover:bg-background/10"
+    : "text-foreground/70 hover:text-foreground hover:bg-foreground/10"
 
   return (
     <>
@@ -66,9 +66,7 @@ export function Navigation() {
             {/* Logo */}
             <motion.button
               onClick={() => scrollToSection("#home")}
-              className={`font-display text-lg font-semibold tracking-tight transition-colors ${
-                isScrolled ? "text-foreground" : "text-background"
-              }`}
+              className="font-display text-lg font-semibold tracking-tight transition-colors text-foreground"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -124,7 +122,7 @@ export function Navigation() {
                 className={`md:hidden transition-colors ${
                   isScrolled
                     ? "text-foreground hover:text-foreground hover:bg-muted/50"
-                    : "text-background hover:text-background hover:bg-background/10"
+                    : "text-foreground hover:text-foreground hover:bg-foreground/10"
                 }`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
