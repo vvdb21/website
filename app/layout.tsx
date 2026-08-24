@@ -1,6 +1,6 @@
 import React from "react"
 import type { Metadata } from "next"
-import { Inter, Plus_Jakarta_Sans } from "next/font/google"
+import { Inter, Plus_Jakarta_Sans, Michroma } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
@@ -12,6 +12,12 @@ const inter = Inter({
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-space",
+})
+
+const michroma = Michroma({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-michroma",
 })
 
 export const metadata: Metadata = {
@@ -44,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${plusJakartaSans.variable} ${michroma.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

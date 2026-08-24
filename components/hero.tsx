@@ -10,7 +10,7 @@ export function Hero() {
     >
       {/* Background Image */}
       <img
-        src="/images/F15.jpg"
+        src="/images/F15 2.jpg"
         alt="Hero background"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: "80% center", transform: "scale(1.15)" }}
@@ -23,7 +23,7 @@ export function Hero() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <motion.div className="-translate-y-[3cm]">
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-inherit tracking-tight mb-6 whitespace-nowrap">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-inherit tracking-tight mb-6 whitespace-nowrap">
               Viktor Van den Berghe
             </h1>
 
