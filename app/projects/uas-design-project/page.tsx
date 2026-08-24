@@ -4,7 +4,16 @@ import { useState, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
+import {
+  ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
+  Wrench,
+  FolderKanban,
+  Activity,
+  Building2,
+  CheckCircle2,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const project = {
@@ -52,7 +61,7 @@ export default function UAVFlyingWingPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border shadow-sm">
         <div className="max-w-4xl mx-auto px-4 h-16 flex items-center">
           <Link href="/#projects">
             <Button variant="ghost" className="gap-2 bg-transparent">
@@ -78,9 +87,9 @@ export default function UAVFlyingWingPage() {
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {project.gallery.map((image, index) => (
-                  <div 
+                  <div
                     key={index}
-                    className="flex-shrink-0 w-[85%] sm:w-[80%] aspect-video rounded-2xl overflow-hidden snap-center relative bg-muted"
+                    className="flex-shrink-0 w-[85%] sm:w-[80%] aspect-video rounded-2xl overflow-hidden snap-center relative bg-muted ring-1 ring-border shadow-md"
                   >
                     <Image
                       src={image}
@@ -94,14 +103,14 @@ export default function UAVFlyingWingPage() {
 
               <button
                 onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md flex items-center justify-center hover:bg-background hover:scale-105 transition-all"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="w-5 h-5 text-foreground" />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md flex items-center justify-center hover:bg-background hover:scale-105 transition-all"
                 aria-label="Next image"
               >
                 <ChevronRight className="w-5 h-5 text-foreground" />
@@ -112,8 +121,8 @@ export default function UAVFlyingWingPage() {
                   <button
                     key={index}
                     onClick={() => scrollToImage(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      index === currentImageIndex ? "bg-primary" : "bg-border hover:bg-muted-foreground"
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex ? "bg-primary w-6" : "bg-border hover:bg-muted-foreground w-2"
                     }`}
                     aria-label={`Go to image ${index + 1}`}
                   />
@@ -122,15 +131,15 @@ export default function UAVFlyingWingPage() {
             </div>
 
             {/* Title & Tags */}
-            <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4 tracking-tight">
               {project.title}
             </h1>
-            
+
             <div className="flex flex-wrap gap-2 mb-8">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1.5 text-sm rounded-full bg-primary/10 text-primary"
+                  className="px-3 py-1.5 text-sm font-medium rounded-full border border-primary/20 bg-primary/10 text-primary"
                 >
                   {tag}
                 </span>
@@ -143,27 +152,47 @@ export default function UAVFlyingWingPage() {
             </p>
 
             {/* Project Details */}
-            <div className="bg-card backdrop-blur-xl border border-border rounded-2xl p-6 sm:p-8 mt-8">
+            <div className="bg-card backdrop-blur-xl border border-border shadow-sm rounded-2xl p-6 sm:p-8 mt-8">
               <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
                 Project Details
               </h2>
-              
+
               <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Technologies</h3>
-                  <p className="text-foreground">{project.tags.join(", ")}</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Wrench className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Technologies</h3>
+                    <p className="text-foreground">{project.tags.join(", ")}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Category</h3>
-                  <p className="text-foreground">Aerospace Engineering</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <FolderKanban className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Category</h3>
+                    <p className="text-foreground">Aerospace Engineering</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Status</h3>
-                  <p className="text-foreground">v3 Redesign in Progress — 2 flight tests completed</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Activity className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Status</h3>
+                    <p className="text-foreground">v3 Redesign in Progress — 2 flight tests completed</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Institution</h3>
-                  <p className="text-foreground">Independent Project</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Building2 className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Institution</h3>
+                    <p className="text-foreground">Independent Project</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,7 +205,7 @@ export default function UAVFlyingWingPage() {
               <ul className="space-y-3 text-muted-foreground mb-8">
                 {keyFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                     {feature}
                   </li>
                 ))}
@@ -184,7 +213,7 @@ export default function UAVFlyingWingPage() {
 
               {/* Blog-style Content - EDIT YOUR CONTENT HERE */}
               <div className="mt-12 space-y-8 text-muted-foreground leading-relaxed">
-                <h3 className="font-display text-xl font-semibold text-foreground">
+                <h3 className="font-display text-xl font-semibold text-foreground border-l-2 border-primary pl-4">
                   Project Overview
                 </h3>
                 
@@ -195,7 +224,7 @@ export default function UAVFlyingWingPage() {
                   supporting manual and semi‑autonomous operation.  
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted ring-1 ring-border shadow-sm mb-6">
                   <Image
                     src="/images/living table.jpeg"
                     alt="UAV assembly process"
@@ -220,11 +249,11 @@ export default function UAVFlyingWingPage() {
 
                 <div className="clear-both" />
 
-                <h3 className="font-display text-xl font-semibold text-foreground pt-4">
+                <h3 className="font-display text-xl font-semibold text-foreground pt-4 border-l-2 border-primary pl-4">
                   Technical Implementation
                 </h3>
 
-                <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-left sm:mr-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted ring-1 ring-border shadow-sm mb-6">
                   <Image
                     src="/images/uav tail.jpeg"
                     alt="V-tail design"
@@ -253,7 +282,7 @@ export default function UAVFlyingWingPage() {
 
                 <div className="clear-both" />
 
-                <h3 className="font-display text-xl font-semibold text-foreground pt-4">
+                <h3 className="font-display text-xl font-semibold text-foreground pt-4 border-l-2 border-primary pl-4">
                   Stability Analysis (XFLR5 — v3 Airframe)
                 </h3>
 
@@ -261,7 +290,7 @@ export default function UAVFlyingWingPage() {
                   Analysis type: Type 7 Stability Analysis, VLM2 (lifting surfaces only). Condition: level flight at α = 0.10°, V = 17.43 m/s. Model mass: 1.386 kg (primary structural components and battery; excludes flight controller, FPV system, and minor hardware). Full AUW is approximately 1.8 kg.
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted ring-1 ring-border shadow-sm mb-6">
                   <Image
                     src="/images/stability analysis.png"
                     alt="XFLR5 stability analysis chart"
@@ -302,7 +331,7 @@ export default function UAVFlyingWingPage() {
                   All critical stability requirements are met. The aircraft is statically stable in pitch, roll and yaw. The short period mode is well-damped and the phugoid is stable with low frequency. Laterally, the roll and Dutch roll modes are stable; the spiral mode shows mild instability consistent with a flat-wing configuration, manageable by both pilot and flight controller. The analysis was conducted on a surfaces-only VLM2 model, so fuselage aerodynamic contributions remain a known limitation.
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted ring-1 ring-border shadow-sm mb-6">
                   <Image
                     src="/images/uav disassembled.jpeg"
                     alt="Assembling the UAV"
@@ -313,7 +342,7 @@ export default function UAVFlyingWingPage() {
 
                 <div className="clear-both" />
 
-                <h3 className="font-display text-xl font-semibold text-foreground pt-4">
+                <h3 className="font-display text-xl font-semibold text-foreground pt-4 border-l-2 border-primary pl-4">
                   Flight Testing Results
                 </h3>
 
@@ -323,7 +352,7 @@ export default function UAVFlyingWingPage() {
                 </p>
 
                 <h4 className="font-semibold text-foreground mt-4">Design Fixes (v2)</h4>
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted ring-1 ring-border shadow-sm mb-6">
                   <Image
                     src="/images/motor tilt.jpeg"
                     alt="Motor tilt redesign detail"
@@ -343,7 +372,7 @@ export default function UAVFlyingWingPage() {
                   The second flight test confirmed the aerodynamic fixes — the aircraft flew wings-level immediately after launch, validating both design changes. The flight ended in a crash attributed to insufficient launch speed and throttle input rather than any airframe issue. This was a launch procedure failure, not a design failure.
                 </p>
 
-                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted mb-6">
+                <div className="sm:float-right sm:ml-6 sm:mb-4 sm:w-64 md:w-80 relative aspect-[4/3] rounded-xl overflow-hidden bg-muted ring-1 ring-border shadow-sm mb-6">
                   <Image
                     src="/images/v3 test.jpeg"
                     alt="V3 flight test image"
@@ -361,7 +390,7 @@ export default function UAVFlyingWingPage() {
 
                 <div className="clear-both" />
 
-                <h3 className="font-display text-xl font-semibold text-foreground pt-4">
+                <h3 className="font-display text-xl font-semibold text-foreground pt-4 border-l-2 border-primary pl-4">
                   Lessons Learned
                 </h3>
 

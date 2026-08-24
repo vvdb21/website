@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export const projects = [
@@ -198,11 +198,12 @@ export function Projects() {
           viewport={{ once: true }}
           className="mb-16"
         >
+          <div className="h-1 w-12 rounded-full bg-gradient-to-r from-primary to-accent mb-5" />
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Projects
           </h2>
           <p className="text-muted-foreground max-w-xl">
-            {/* A collection of aerospace engineering projects spanning flight simulation, 
+            {/* A collection of aerospace engineering projects spanning flight simulation,
             aircraft design, and autonomous systems. */}
           </p>
         </motion.div>
@@ -218,37 +219,41 @@ export function Projects() {
             >
               <Link href={`/projects/${project.slug}`}>
                 <motion.div
-                  className="group relative w-full text-left p-6 rounded-2xl bg-card backdrop-blur-xl border border-border hover:border-primary/30 transition-all duration-300 overflow-hidden cursor-pointer"
-                  whileHover={{ scale: 1.03, y: -4 }}
+                  className="group relative w-full h-full text-left p-6 rounded-2xl bg-card backdrop-blur-xl border border-border shadow-sm hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden cursor-pointer"
+                  whileHover={{ scale: 1.02, y: -4 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   {/* Gradient background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                  
+
                   {/* Content */}
                   <div className="relative z-10">
-                    <div className="aspect-video rounded-lg bg-muted/50 mb-4 overflow-hidden relative">
+                    <div className="aspect-video rounded-xl ring-1 ring-border/60 bg-muted/50 mb-4 overflow-hidden relative">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
+                      <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-background/90 backdrop-blur-sm border border-border/60 flex items-center justify-center opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300">
+                        <ArrowUpRight className="w-4 h-4 text-foreground" />
+                      </div>
                     </div>
-                    
+
                     <h3 className="font-display text-lg font-semibold text-card-foreground mb-2 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    
-                    <p className="text-sm text-muted-foreground mb-4">
+
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                       {project.shortDesc}
                     </p>
-                    
+
                     <div className="flex flex-wrap gap-2">
                       {project.tags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}
-                          className="px-2 py-1 text-xs rounded-full bg-muted text-muted-foreground"
+                          className="px-2.5 py-1 text-xs rounded-full border border-border/60 bg-muted/50 text-muted-foreground group-hover:border-primary/30 transition-colors"
                         >
                           {tag}
                         </span>
@@ -269,9 +274,13 @@ export function Projects() {
           className="flex justify-center mt-12"
         >
           <Link href="/projects">
-            <Button variant="outline" size="lg" className="gap-2 bg-transparent">
+            <Button
+              variant="outline"
+              size="lg"
+              className="gap-2 bg-transparent group hover:border-primary/40 hover:shadow-md hover:shadow-primary/10 transition-all"
+            >
               View All Projects
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </Link>
         </motion.div>

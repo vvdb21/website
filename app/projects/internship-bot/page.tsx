@@ -4,7 +4,16 @@ import { useState, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
+import {
+  ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
+  Wrench,
+  FolderKanban,
+  Activity,
+  Building2,
+  Github,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const project = {
@@ -45,7 +54,7 @@ export default function RocketSimulatorPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border shadow-sm">
         <div className="max-w-4xl mx-auto px-4 h-16 flex items-center">
           <Link href="/#projects">
             <Button variant="ghost" className="gap-2 bg-transparent">
@@ -71,9 +80,9 @@ export default function RocketSimulatorPage() {
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               >
                 {project.gallery.map((image, index) => (
-                  <div 
+                  <div
                     key={index}
-                    className="flex-shrink-0 w-[85%] sm:w-[80%] aspect-video rounded-2xl overflow-hidden snap-center relative bg-muted"
+                    className="flex-shrink-0 w-[85%] sm:w-[80%] aspect-video rounded-2xl overflow-hidden snap-center relative bg-muted ring-1 ring-border shadow-md"
                   >
                     <Image
                       src={image}
@@ -87,14 +96,14 @@ export default function RocketSimulatorPage() {
 
               <button
                 onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md flex items-center justify-center hover:bg-background hover:scale-105 transition-all"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="w-5 h-5 text-foreground" />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border flex items-center justify-center hover:bg-background transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md flex items-center justify-center hover:bg-background hover:scale-105 transition-all"
                 aria-label="Next image"
               >
                 <ChevronRight className="w-5 h-5 text-foreground" />
@@ -105,8 +114,8 @@ export default function RocketSimulatorPage() {
                   <button
                     key={index}
                     onClick={() => scrollToImage(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      index === currentImageIndex ? "bg-primary" : "bg-border hover:bg-muted-foreground"
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex ? "bg-primary w-6" : "bg-border hover:bg-muted-foreground w-2"
                     }`}
                     aria-label={`Go to image ${index + 1}`}
                   />
@@ -115,15 +124,15 @@ export default function RocketSimulatorPage() {
             </div>
 
             {/* Title & Tags */}
-            <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-4 tracking-tight">
               {project.title}
             </h1>
-            
+
             <div className="flex flex-wrap gap-2 mb-8">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1.5 text-sm rounded-full bg-primary/10 text-primary"
+                  className="px-3 py-1.5 text-sm font-medium rounded-full border border-primary/20 bg-primary/10 text-primary"
                 >
                   {tag}
                 </span>
@@ -138,44 +147,69 @@ export default function RocketSimulatorPage() {
               {stats.map((stat) => (
                 <article
                   key={stat.label}
-                  className="rounded-2xl border border-border bg-card p-5 shadow-sm"
+                  className="rounded-2xl border border-border bg-gradient-to-br from-primary/5 to-card p-5 shadow-sm"
                 >
-                  <p className="text-3xl font-semibold text-foreground">{stat.value}</p>
+                  <p className="text-3xl font-semibold text-primary">{stat.value}</p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </article>
               ))}
             </div>
 
-            <div className="bg-card backdrop-blur-xl border border-border rounded-2xl p-6 sm:p-8 mt-8">
+            <div className="bg-card backdrop-blur-xl border border-border shadow-sm rounded-2xl p-6 sm:p-8 mt-8">
               <h2 className="font-display text-2xl font-semibold text-foreground mb-6">Project Details</h2>
 
               <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Technologies</h3>
-                  <p className="text-foreground">Python, Google Cloud Functions, Telegram API, Perplexity API</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Wrench className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Technologies</h3>
+                    <p className="text-foreground">Python, Google Cloud Functions, Telegram API, Perplexity API</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Category</h3>
-                  <p className="text-foreground">Coding</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <FolderKanban className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Category</h3>
+                    <p className="text-foreground">Coding</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Status</h3>
-                  <p className="text-foreground">Active</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Activity className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Status</h3>
+                    <p className="text-foreground">Active</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Institution</h3>
-                  <p className="text-foreground">Independent Project</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Building2 className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Institution</h3>
+                    <p className="text-foreground">Independent Project</p>
+                  </div>
                 </div>
-                <div className="sm:col-span-2">
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">GitHub</h3>
-                  <a
-                    href="https://github.com/vvdb21"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-primary underline-offset-4 hover:underline"
-                  >
-                    https://github.com/vvdb21
-                  </a>
+                <div className="flex items-start gap-3 sm:col-span-2">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Github className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">GitHub</h3>
+                    <a
+                      href="https://github.com/vvdb21"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-primary underline-offset-4 hover:underline"
+                    >
+                      https://github.com/vvdb21
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

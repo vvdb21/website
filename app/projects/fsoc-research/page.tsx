@@ -3,7 +3,13 @@
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowLeft } from "lucide-react"
+import {
+  ArrowLeft,
+  Wrench,
+  FolderKanban,
+  Activity,
+  Building2,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const project = {
@@ -20,7 +26,7 @@ const stats = [
 export default function FsocResearchPage() {
   return (
     <main className="min-h-screen bg-background">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border shadow-sm">
         <div className="max-w-4xl mx-auto px-4 h-16 flex items-center">
           <Link href="/#projects">
             <Button variant="ghost" className="gap-2 bg-transparent">
@@ -40,7 +46,7 @@ export default function FsocResearchPage() {
             className="space-y-10"
           >
             <section className="space-y-4">
-              <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground">
+              <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
                 {project.title}
               </h1>
 
@@ -48,12 +54,12 @@ export default function FsocResearchPage() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-primary/10 px-3 py-1.5 text-primary"
+                    className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 font-medium text-primary"
                   >
                     {tag}
                   </span>
                 ))}
-                <span className="rounded-full bg-amber-500/10 px-3 py-1.5 text-amber-700 dark:text-amber-300">
+                <span className="rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1.5 font-medium text-amber-700 dark:text-amber-300">
                   Under Review
                 </span>
               </div>
@@ -82,9 +88,9 @@ export default function FsocResearchPage() {
                 {stats.map((item) => (
                   <article
                     key={item}
-                    className="rounded-2xl border border-border bg-background p-4 text-center shadow-sm"
+                    className="rounded-2xl border border-border bg-gradient-to-br from-primary/5 to-background p-4 text-center shadow-sm"
                   >
-                    <p className="text-2xl font-semibold text-foreground">{item}</p>
+                    <p className="text-2xl font-semibold text-primary">{item}</p>
                   </article>
                 ))}
               </div>
@@ -266,21 +272,41 @@ export default function FsocResearchPage() {
             <section className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
               <h2 className="font-display text-2xl font-semibold text-foreground mb-6">Project Details</h2>
               <div className="grid gap-6 sm:grid-cols-2">
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Technologies</h3>
-                  <p className="text-foreground">Python, Research, Data Analysis</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Wrench className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Technologies</h3>
+                    <p className="text-foreground">Python, Research, Data Analysis</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Category</h3>
-                  <p className="text-foreground">Aerospace Engineering</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <FolderKanban className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Category</h3>
+                    <p className="text-foreground">Aerospace Engineering</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Status</h3>
-                  <p className="text-foreground">Under Review</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Activity className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Status</h3>
+                    <p className="text-foreground">Under Review</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-medium text-muted-foreground mb-2">Institution</h3>
-                  <p className="text-foreground">TU Delft</p>
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                    <Building2 className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">Institution</h3>
+                    <p className="text-foreground">TU Delft</p>
+                  </div>
                 </div>
               </div>
             </section>
