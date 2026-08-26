@@ -37,12 +37,26 @@ const keyFeatures = [
   "On board FPV camera with 5.8GHz video transmitter for real-time telemetry and video feed",
 ]
 
-export default function UAVFlyingWingPage() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+const flightTest3Gallery = [
+  "/images/test 3 1.jpeg",
+  "/images/test 3 2.jpeg",
+  "/images/test 3 3.jpeg",
+  "/images/test 3 4.jpeg",
+  "/images/test 3 5.jpeg",
+]
+
+function PhotoCarousel({
+  images,
+  altText,
+}: {
+  images: string[]
+  altText: (index: number) => string
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0)
   const galleryRef = useRef<HTMLDivElement>(null)
 
   const scrollToImage = (index: number) => {
-    setCurrentImageIndex(index)
+    setCurrentIndex(index)
     if (galleryRef.current) {
       const scrollAmount = index * (galleryRef.current.offsetWidth * 0.85 + 16)
       galleryRef.current.scrollTo({ left: scrollAmount, behavior: "smooth" })
@@ -50,15 +64,64 @@ export default function UAVFlyingWingPage() {
   }
 
   const nextImage = () => {
-    const newIndex = currentImageIndex < project.gallery.length - 1 ? currentImageIndex + 1 : 0
+    const newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0
     scrollToImage(newIndex)
   }
 
   const prevImage = () => {
-    const newIndex = currentImageIndex > 0 ? currentImageIndex - 1 : project.gallery.length - 1
+    const newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1
     scrollToImage(newIndex)
   }
 
+  return (
+    <div className="relative">
+      <div
+        ref={galleryRef}
+        className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-[85%] sm:w-[80%] aspect-video rounded-2xl overflow-hidden snap-center relative bg-muted ring-1 ring-border shadow-md"
+          >
+            <Image src={image} alt={altText(index)} fill className="object-cover" />
+          </div>
+        ))}
+      </div>
+
+      <button
+        onClick={prevImage}
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md flex items-center justify-center hover:bg-background hover:scale-105 transition-all"
+        aria-label="Previous image"
+      >
+        <ChevronLeft className="w-5 h-5 text-foreground" />
+      </button>
+      <button
+        onClick={nextImage}
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md flex items-center justify-center hover:bg-background hover:scale-105 transition-all"
+        aria-label="Next image"
+      >
+        <ChevronRight className="w-5 h-5 text-foreground" />
+      </button>
+
+      <div className="flex justify-center gap-2 mt-4">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToImage(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex ? "bg-primary w-6" : "bg-border hover:bg-muted-foreground w-2"
+            }`}
+            aria-label={`Go to image ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default function UAVFlyingWingPage() {
   return (
     <main className="min-h-screen bg-background">
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border shadow-sm">
@@ -80,54 +143,11 @@ export default function UAVFlyingWingPage() {
             transition={{ duration: 0.5 }}
           >
             {/* Photo Gallery */}
-            <div className="relative mb-8">
-              <div 
-                ref={galleryRef}
-                className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              >
-                {project.gallery.map((image, index) => (
-                  <div
-                    key={index}
-                    className="flex-shrink-0 w-[85%] sm:w-[80%] aspect-video rounded-2xl overflow-hidden snap-center relative bg-muted ring-1 ring-border shadow-md"
-                  >
-                    <Image
-                      src={image}
-                      alt={`${project.title} - Image ${index + 1}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md flex items-center justify-center hover:bg-background hover:scale-105 transition-all"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="w-5 h-5 text-foreground" />
-              </button>
-              <button
-                onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm border border-border shadow-md flex items-center justify-center hover:bg-background hover:scale-105 transition-all"
-                aria-label="Next image"
-              >
-                <ChevronRight className="w-5 h-5 text-foreground" />
-              </button>
-
-              <div className="flex justify-center gap-2 mt-4">
-                {project.gallery.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => scrollToImage(index)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      index === currentImageIndex ? "bg-primary w-6" : "bg-border hover:bg-muted-foreground w-2"
-                    }`}
-                    aria-label={`Go to image ${index + 1}`}
-                  />
-                ))}
-              </div>
+            <div className="mb-8">
+              <PhotoCarousel
+                images={project.gallery}
+                altText={(index) => `${project.title} - Image ${index + 1}`}
+              />
             </div>
 
             {/* Title & Tags */}
@@ -182,7 +202,7 @@ export default function UAVFlyingWingPage() {
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-muted-foreground mb-1">Status</h3>
-                    <p className="text-foreground">v3 Redesign in Progress — 2 flight tests completed</p>
+                    <p className="text-foreground">v3 Redesign in Progress — 3 flight tests completed</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -386,7 +406,19 @@ export default function UAVFlyingWingPage() {
                   v3 redesign is in progress, targeting improved launch procedure, onboard data logging via SD card, and multi-angle camera coverage for post-flight analysis.
                 </p>
 
-                
+                <div className="clear-both" />
+
+                <h4 className="font-semibold text-foreground mt-4">Flight Test 3</h4>
+                <p>
+                  Tested again this week — and lost the aircraft again, this time to a hand-launch at too steep an angle, which led to an unrecoverable stall before impact. The airframe and aerodynamics aren&apos;t suspected: there have been no design changes since the last test, and this crash matched the same profile and cause as the previous one, pointing to launch technique rather than the aircraft itself.
+                </p>
+
+                <div className="mt-6">
+                  <PhotoCarousel
+                    images={flightTest3Gallery}
+                    altText={(index) => `Test flight 3 — launch sequence, photo ${index + 1}`}
+                  />
+                </div>
 
                 <div className="clear-both" />
 
@@ -395,7 +427,7 @@ export default function UAVFlyingWingPage() {
                 </h3>
 
                 <p>
-                  The two flight test campaigns reinforced the importance of systematic root cause analysis over iterative trial and error. The v1 pitch-up failure was initially attributed to pilot error, but closer analysis revealed two independent aerodynamic causes — both of which were resolved in v2. The v2 wings-level flight confirmed this diagnosis. Future test campaigns will include onboard data logging and multi-angle video to reduce reliance on visual observation for post-flight analysis.
+                  The three flight test campaigns reinforced the importance of systematic root cause analysis over iterative trial and error. The v1 pitch-up failure was initially attributed to pilot error, but closer analysis revealed two independent aerodynamic causes — both of which were resolved in v2. The v2 wings-level flight confirmed this diagnosis, and the matching failure mode in Flight Test 3 reinforced that the airframe itself is sound. Future test campaigns will include onboard data logging and multi-angle video to reduce reliance on visual observation for post-flight analysis.
                 </p>
 
                 
