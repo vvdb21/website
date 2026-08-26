@@ -401,16 +401,13 @@ export default function UAVFlyingWingPage() {
                   />
                 </div>
 
-                <h4 className="font-semibold text-foreground mt-4">Current Status</h4>
-                <p>
-                  v3 redesign is in progress, targeting improved launch procedure, onboard data logging via SD card, and multi-angle camera coverage for post-flight analysis.
-                </p>
+                
 
                 <div className="clear-both" />
 
                 <h4 className="font-semibold text-foreground mt-4">Flight Test 3</h4>
                 <p>
-                  Tested again this week — and lost the aircraft again, this time to a hand-launch at too steep an angle, which led to an unrecoverable stall before impact. The airframe and aerodynamics aren&apos;t suspected: there have been no design changes since the last test, and this crash matched the same profile and cause as the previous one, pointing to launch technique rather than the aircraft itself.
+                  Tested again and lost the aircraft again, this time to a hand-launch at too steep an angle, which led to an unrecoverable stall before impact. The airframe and aerodynamics aren&apos;t suspected: there have been no design changes since the last test, and this crash matched the same profile and cause as the previous one, pointing to launch technique rather than the aircraft itself.
                 </p>
 
                 <div className="mt-6">
@@ -422,12 +419,17 @@ export default function UAVFlyingWingPage() {
 
                 <div className="clear-both" />
 
+                <h4 className="font-semibold text-foreground mt-4">Current Status</h4>
+                <p>
+                  Reprint and relaunch, potentially reaching out to someone with more hand-launching experience for a bit of help. 
+                </p>
+
                 <h3 className="font-display text-xl font-semibold text-foreground pt-4 border-l-2 border-primary pl-4">
                   Lessons Learned
                 </h3>
 
                 <p>
-                  The three flight test campaigns reinforced the importance of systematic root cause analysis over iterative trial and error. The v1 pitch-up failure was initially attributed to pilot error, but closer analysis revealed two independent aerodynamic causes — both of which were resolved in v2. The v2 wings-level flight confirmed this diagnosis, and the matching failure mode in Flight Test 3 reinforced that the airframe itself is sound. Future test campaigns will include onboard data logging and multi-angle video to reduce reliance on visual observation for post-flight analysis.
+                  The three flight test campaigns reinforced the importance of systematic root cause analysis during iterative trial and error. The v1 pitch-up failure was initially attributed to pilot error, but closer analysis revealed two independent aerodynamic causes, both of which were resolved in v2. The v2 wings-level flight confirmed this diagnosis, and the matching failure mode in Flight Test 3 reinforced that the airframe itself is sound. Future test campaigns will include onboard data logging and multi-angle video to reduce reliance on visual observation for post-flight analysis.
                 </p>
 
                 
